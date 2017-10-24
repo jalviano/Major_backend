@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Updated backend to run properly">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/triangle/Triangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mutants.log" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/Triangle$TriangleType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/Triangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/Triangle.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/mutants.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/test/TestSuite.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/triangle/test/TestSuite.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.class" afterPath="$PROJECT_DIR$/src/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.class" afterPath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/Prepass.class" afterPath="$PROJECT_DIR$/src/prepass/Prepass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.class" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/output/KillCell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/output/KillMatrix.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/output/TestRow.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prepass/Prepass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prepass/TestMethod.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/Constants.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/Prepass.java" afterPath="$PROJECT_DIR$/src/prepass/Prepass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/run.sh" afterPath="$PROJECT_DIR$/src/run.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" afterPath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" />
     </list>
     <ignored mask="*.class" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -513,6 +504,14 @@
       <option name="presentableId" value="Default" />
       <updated>1507986049623</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated backend to run properly">
+      <created>1508870150475</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508870150475</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -521,7 +520,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -533,7 +532,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42836675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21387696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21387696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
