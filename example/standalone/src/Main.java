@@ -9,24 +9,32 @@ import java.util.List;
 
 public class Main {
 
+    // TODO: Implement runtime test to kill mutant
+    // TODO: Implement output interface and visualization
+
     public static void main(String... args) {
         String mutatedClasspath = args[0];
         String testClasspath = args[1];
+        String logFilepath = args[2];
         List<Class<?>> testClasses;
         try {
             String[] classpaths = {mutatedClasspath, testClasspath};
             testClasses = TestFinder.loadClasses(classpaths);
             Prepass prepass = new Prepass(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            System.out.println("Covered mutants: ");
-            for (TestMethod key : coverage.keySet()) {
-                System.out.println(key.getName() + ": " + coverage.get(key).toString());
-            }
-            MutationAnalyzer analyzer = new MutationAnalyzer(testClasses, coverage);
-            int mutationScore = analyzer.runAnalysis();
+            //printCoverage(coverage);
+            MutationAnalyzer analyzer = new MutationAnalyzer(testClasses, coverage, logFilepath);
+            float mutationScore = analyzer.runAnalysis();
             System.out.println("Mutation score: " + mutationScore);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
+        System.out.println("Covered mutants: ");
+        for (TestMethod key : coverage.keySet()) {
+            System.out.println(key.getName() + ": " + coverage.get(key).toString());
         }
     }
 }

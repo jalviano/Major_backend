@@ -1,9 +1,10 @@
 package output;
 
-import utils.Constants;
+import static utils.Constants.*;
 
 public class KillCell {
 
+    private String testName;
     private int mutationId;
     private int killResult;
 
@@ -12,17 +13,26 @@ public class KillCell {
         this.killResult = killResult;
     }
 
+    public KillCell(String testName, int killResult) {
+        this.testName = testName;
+        this.killResult = killResult;
+    }
+
     int getMutationId() {
         return mutationId;
     }
 
+    String getTestName() {
+        return  testName;
+    }
+
     String getKillResult() {
         switch (killResult) {
-            case Constants.UNKILLED:
+            case UNKILLED:
                 return "Unkilled";
-            case Constants.KILLED:
+            case KILLED:
                 return "Killed";
-            case Constants.TIMEDOUT:
+            case TIMEDOUT:
                 return "Timed out";
             default:
                 return "Unkilled";
