@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Updated output data structure.">
+    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" afterPath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/KillMatrix.java" afterPath="$PROJECT_DIR$/src/output/KillMatrix.java" />
     </list>
     <ignored mask="*.class" />
+    <ignored mask=".DS_STORE" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/src/analysis/MutationAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/output/KillMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="e#213#214#0" expanded="true" />
                 <element signature="e#253#254#0" expanded="true" />
@@ -529,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508877606322</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated output data structure.">
+      <created>1508936771536</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508936771536</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -853,7 +858,7 @@
     <entry file="file://$PROJECT_DIR$/src/analysis/MutationAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -869,7 +874,7 @@
     <entry file="file://$PROJECT_DIR$/src/output/KillMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="e#213#214#0" expanded="true" />
             <element signature="e#253#254#0" expanded="true" />
