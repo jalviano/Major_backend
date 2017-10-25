@@ -10,7 +10,6 @@ import java.util.concurrent.*;
 
 public class Main {
 
-    // TODO: Implement execution time test to kill mutant
     // TODO: Implement output interface and visualization
 
     public static void main(String... args) {
