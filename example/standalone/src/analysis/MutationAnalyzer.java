@@ -9,12 +9,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.*;
 
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Request;
 import org.junit.runner.Result;
 
 import output.KillMatrix;
+import output.MatrixView;
 import prepass.TestMethod;
 import static utils.Constants.*;
 
@@ -34,15 +34,21 @@ public class MutationAnalyzer {
     public float runAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
-        KillMatrix matrix = new KillMatrix();
+        KillMatrix matrix = new KillMatrix(mutantNumber);
         for (int i = 1; i <= mutantNumber; i++) {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (coverage.get(test).contains(i)) {
-                    Request request = Request.method(testClass, test.getName());
-                    Result result = new JUnitCore().run(request);
-                    if (result.getFailureCount() != 0) {
+                    Result result = timeAnalyzer(test);
+                    if (result == null) {
+                        // Add kill cell for timed-out mutant for test case.
+                        matrix.addKillResult(test.getName(), TIMEDOUT);
+                        if (!killed) {
+                            killedCount++;
+                            killed = true;
+                        }
+                    } else if (result.getFailureCount() != 0) {
                         // Add kill cell for killed mutant for test case.
                         matrix.addKillResult(test.getName(), KILLED);
                         if (!killed) {
@@ -59,23 +65,29 @@ public class MutationAnalyzer {
                 }
             }
         }
-        matrix.printOutput();
-        return (float) killedCount / mutantNumber;
+        float mutationScore = (float) killedCount / mutantNumber;
+        new MatrixView(matrix, mutationScore);
+        //matrix.printOutput();
+        return mutationScore;
     }
 
     public float runFastAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
-        KillMatrix matrix = new KillMatrix();
+        KillMatrix matrix = new KillMatrix(mutantNumber);
         for (int i = 1; i <= mutantNumber; i++) {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (coverage.get(test).contains(i)) {
                     if (!killed) {
-                        Request request = Request.method(testClass, test.getName());
-                        Result result = new JUnitCore().run(request);
-                        if (result.getFailureCount() != 0) {
+                        Result result = timeAnalyzer(test);
+                        if (result == null) {
+                            // Add kill cell for timed-out mutant for test case.
+                            matrix.addKillResult(test.getName(), TIMEDOUT);
+                            killedCount++;
+                            killed = true;
+                        } else if (result.getFailureCount() != 0) {
                             // Add kill cell for killed mutant for test case.
                             matrix.addKillResult(test.getName(), KILLED);
                             killedCount++;
@@ -111,5 +123,21 @@ public class MutationAnalyzer {
             e.printStackTrace();
         }
         return mutantNumber;
+    }
+
+    private Result timeAnalyzer(TestMethod test) {
+        Result result = null;
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        TestTask task = new TestTask(testClass, test);
+        Future<String> future = executor.submit(task);
+        try {
+            future.get(test.getExecTime(), TimeUnit.MILLISECONDS);
+            result = task.getResult();
+        } catch (Exception e) {
+            future.cancel(true);
+            System.out.println("Test terminated...");
+        }
+        executor.shutdownNow();
+        return result;
     }
 }
