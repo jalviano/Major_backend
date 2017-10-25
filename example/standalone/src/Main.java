@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Main {
 
-    // TODO: Implement runtime test to kill mutant
+    // TODO: Implement execution time test to kill mutant
     // TODO: Implement output interface and visualization
 
     public static void main(String... args) {

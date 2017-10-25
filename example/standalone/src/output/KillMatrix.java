@@ -24,12 +24,16 @@ public class KillMatrix {
         }
     }
 
-    public HashMap<String, Integer> getTestsForMutation(int mutation) {
-        // TODO: Test if implementation is correct
+    public int getKillResult(String test, int mutation) {
+        ArrayList<Integer> mutations = matrix.get(test);
+        return mutations.get(mutation);
+    }
+
+    public HashMap<String, Integer> getTestsForMutatant(int mutatant) {
         HashMap<String, Integer> tests = new HashMap<>();
         for (String test : matrix.keySet()) {
-            ArrayList<Integer> mutations = matrix.get(test);
-            int killResult = mutations.get(mutation);
+            ArrayList<Integer> mutatants = matrix.get(test);
+            int killResult = mutatants.get(mutatant);
             if (killResult != NOT_COVERED) {
                 tests.put(test, killResult);
             }
@@ -37,30 +41,24 @@ public class KillMatrix {
         return tests;
     }
 
-    public HashMap<Integer, Integer> getMutationsForTest(String test) {
-        // TODO: Test if implementation is correct
-        ArrayList<Integer> allMutations = matrix.get(test);
-        HashMap<Integer, Integer> mutations = new HashMap<>();
-        for (int i = 0; i < allMutations.size(); i++) {
-            int killResult = allMutations.get(i);
+    public HashMap<Integer, Integer> getMutantsForTest(String test) {
+        ArrayList<Integer> allMutants = matrix.get(test);
+        HashMap<Integer, Integer> mutatants = new HashMap<>();
+        for (int i = 0; i < allMutants.size(); i++) {
+            int killResult = allMutants.get(i);
             if (killResult != NOT_COVERED) {
-                mutations.put(i + 1, killResult);
+                mutatants.put(i + 1, killResult);
             }
         }
-        return mutations;
-    }
-
-    public int getKillResult(String test, int mutation) {
-        ArrayList<Integer> mutations = matrix.get(test);
-        return mutations.get(mutation);
+        return mutatants;
     }
 
     public void printOutput() {
         for (String test : matrix.keySet()) {
             System.out.print(test + ": ");
-            ArrayList<Integer> mutations = matrix.get(test);
-            for (int i = 0; i < mutations.size(); i++) {
-                System.out.print("[" + (i + 1) + ": " + mutations.get(i) + "]");
+            ArrayList<Integer> mutatants = matrix.get(test);
+            for (int i = 0; i < mutatants.size(); i++) {
+                System.out.print("[" + (i + 1) + ": " + mutatants.get(i) + "]");
             }
             System.out.println("");
         }

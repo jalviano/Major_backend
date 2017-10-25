@@ -40,6 +40,38 @@ public class MutationAnalyzer {
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (coverage.get(test).contains(i)) {
+                    Request request = Request.method(testClass, test.getName());
+                    Result result = new JUnitCore().run(request);
+                    if (result.getFailureCount() != 0) {
+                        // Add kill cell for killed mutant for test case.
+                        matrix.addKillResult(test.getName(), KILLED);
+                        if (!killed) {
+                            killedCount++;
+                            killed = true;
+                        }
+                    } else {
+                        // Add kill cell for unkilled mutant for test case.
+                        matrix.addKillResult(test.getName(), UNKILLED);
+                    }
+                } else {
+                    // Add empty (N/A) kill cell for test case.
+                    matrix.addKillResult(test.getName(), NOT_COVERED);
+                }
+            }
+        }
+        matrix.printOutput();
+        return (float) killedCount / mutantNumber;
+    }
+
+    public float runFastAnalysis() {
+        int killedCount = 0;
+        int mutantNumber = totalMutantNumber();
+        KillMatrix matrix = new KillMatrix();
+        for (int i = 1; i <= mutantNumber; i++) {
+            boolean killed = false;
+            Config.__M_NO = i;
+            for (TestMethod test : coverage.keySet()) {
+                if (coverage.get(test).contains(i)) {
                     if (!killed) {
                         Request request = Request.method(testClass, test.getName());
                         Result result = new JUnitCore().run(request);
@@ -62,7 +94,6 @@ public class MutationAnalyzer {
                 }
             }
         }
-        matrix.printOutput();
         return (float) killedCount / mutantNumber;
     }
 
@@ -81,26 +112,4 @@ public class MutationAnalyzer {
         }
         return mutantNumber;
     }
-
-    /*public float runAnalysis_old() {
-        int killedCount = 0;
-        OldKillMatrix matrix = new OldKillMatrix();
-        for (TestMethod test : coverage.keySet()) {
-            matrix.newTestRow(test.getName());
-            for (Integer mutation : coverage.get(test)) {
-                Config.__M_NO = mutation;
-                Request request = Request.method(testClass, test.getName());
-                Result result = new JUnitCore().run(request);
-                if (result.getFailureCount() != 0) {
-                    matrix.addKillCell(new KillCell(mutation, KILLED));
-                    killedCount++;
-                } else {
-                    matrix.addKillCell(new KillCell(mutation, UNKILLED));
-                }
-            }
-            matrix.addTestRow();
-        }
-        //matrix.printOutput();
-        return (float) killedCount / totalMutantNumber();
-    }*/
 }
