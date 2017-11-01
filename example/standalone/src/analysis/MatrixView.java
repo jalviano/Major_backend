@@ -1,4 +1,4 @@
-package output;
+package analysis;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class MatrixView {
         gui.setVisible(true);
     }
 
-    public void draw() {
+    private void draw() {
         gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gui.setSize(new Dimension(1000, 600));
         gui.setResizable(true);
@@ -34,8 +34,8 @@ public class MatrixView {
     }
 
     private void populateResults() {
-        final int WIDTH = 20;
-        final int HEIGHT = 20;
+        final int WIDTH = 8;
+        final int HEIGHT = 8;
         JLabel empty = new JLabel();
         empty.setText("");
         empty.setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -57,18 +57,20 @@ public class MatrixView {
             testResult.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 8));
             results.add(testResult);
             for (int i = 1; i <= matrix.getColumns(); i++) {
-                int killResult = matrix.getKillResult(test, i);
+                Integer killResult = matrix.getKillResult(test, i);
                 JLabel result = new JLabel();
                 result.setText("");
                 result.setOpaque(true);
                 result.setPreferredSize(new Dimension(WIDTH, HEIGHT));
                 result.setMinimumSize(new Dimension(WIDTH, HEIGHT));
-                if (killResult == KILLED) {
+                if (killResult == ASSERTION_ERROR) {
                     result.setBackground(Color.RED);
                 } else if (killResult == UNKILLED) {
                     result.setBackground(Color.GREEN);
-                } else if (killResult == TIMEDOUT) {
+                } else if (killResult == TIMEOUT) {
                     result.setBackground(Color.YELLOW);
+                } else if (killResult == GENERAL_EXCEPTION) {
+                    result.setBackground(Color.BLUE);
                 } else {
                     result.setBackground(Color.WHITE);
                 }

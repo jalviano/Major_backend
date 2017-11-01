@@ -13,8 +13,8 @@ import java.util.concurrent.*;
 
 import org.junit.runner.Result;
 
-import output.KillMatrix;
-import output.MatrixView;
+import org.junit.runner.notification.Failure;
+import output.FormatterInterface;
 import prepass.TestMethod;
 import static utils.Constants.*;
 
@@ -31,7 +31,7 @@ public class MutationAnalyzer {
         testClass = testClasses.get(1);
     }
 
-    public float runAnalysis() {
+    public KillMatrix runAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
         KillMatrix matrix = new KillMatrix(mutantNumber);
@@ -39,39 +39,19 @@ public class MutationAnalyzer {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
-                if (coverage.get(test).contains(i)) {
-                    Result result = timeAnalyzer(test);
-                    if (result == null) {
-                        // Add kill cell for timed-out mutant for test case.
-                        matrix.addKillResult(test.getName(), TIMEDOUT);
-                        if (!killed) {
-                            killedCount++;
-                            killed = true;
-                        }
-                    } else if (result.getFailureCount() != 0) {
-                        // Add kill cell for killed mutant for test case.
-                        matrix.addKillResult(test.getName(), KILLED);
-                        if (!killed) {
-                            killedCount++;
-                            killed = true;
-                        }
-                    } else {
-                        // Add kill cell for unkilled mutant for test case.
-                        matrix.addKillResult(test.getName(), UNKILLED);
-                    }
-                } else {
-                    // Add empty (N/A) kill cell for test case.
-                    matrix.addKillResult(test.getName(), NOT_COVERED);
+                Integer result = analyzeTest(test, i);
+                matrix.addKillResult(test.getName(), result);
+                if (result != UNKILLED && result != NOT_COVERED && !killed) {
+                    killedCount++;
+                    killed = true;
                 }
             }
         }
-        float mutationScore = (float) killedCount / mutantNumber;
-        new MatrixView(matrix, mutationScore);
-        //matrix.printOutput();
-        return mutationScore;
+        matrix.setMutationScore((float) killedCount / mutantNumber);
+        return matrix;
     }
 
-    public float runFastAnalysis() {
+    public KillMatrix runOptimizedAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
         KillMatrix matrix = new KillMatrix(mutantNumber);
@@ -79,34 +59,18 @@ public class MutationAnalyzer {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
-                if (coverage.get(test).contains(i)) {
-                    if (!killed) {
-                        Result result = timeAnalyzer(test);
-                        if (result == null) {
-                            // Add kill cell for timed-out mutant for test case.
-                            matrix.addKillResult(test.getName(), TIMEDOUT);
-                            killedCount++;
-                            killed = true;
-                        } else if (result.getFailureCount() != 0) {
-                            // Add kill cell for killed mutant for test case.
-                            matrix.addKillResult(test.getName(), KILLED);
-                            killedCount++;
-                            killed = true;
-                        } else {
-                            // Add kill cell for unkilled mutant for test case.
-                            matrix.addKillResult(test.getName(), UNKILLED);
-                        }
-                    } else {
-                        // Add kill cell for killed mutant for test case.
-                        matrix.addKillResult(test.getName(), KILLED);
-                    }
+                if (!killed) {
+                    Integer result = analyzeTest(test, i);
+                    matrix.addKillResult(test.getName(), result);
+                    killedCount++;
+                    killed = true;
                 } else {
-                    // Add empty (N/A) kill cell for test case.
                     matrix.addKillResult(test.getName(), NOT_COVERED);
                 }
             }
         }
-        return (float) killedCount / mutantNumber;
+        matrix.setMutationScore((float) killedCount / mutantNumber);
+        return matrix;
     }
 
     private int totalMutantNumber() {
@@ -125,6 +89,35 @@ public class MutationAnalyzer {
         return mutantNumber;
     }
 
+    private Integer analyzeTest(TestMethod test, int mutantId) {
+        if (coverage.get(test).contains(mutantId)) {
+            Result result = timeAnalyzer(test);
+            if (result == null) {
+                return TIMEOUT;
+            } else if (result.getFailureCount() != 0) {
+                if (isAssertionError(result)) {
+                    return ASSERTION_ERROR;
+                } else {
+                    return GENERAL_EXCEPTION;
+                }
+            } else {
+                return UNKILLED;
+            }
+        } else {
+            return NOT_COVERED;
+        }
+    }
+
+    private boolean isAssertionError(Result result) {
+        List<Failure> failures = result.getFailures();
+        for (Failure failure : failures) {
+            if (failure.getException() instanceof AssertionError) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private Result timeAnalyzer(TestMethod test) {
         Result result = null;
         ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -135,7 +128,6 @@ public class MutationAnalyzer {
             result = task.getResult();
         } catch (Exception e) {
             future.cancel(true);
-            System.out.println("Test terminated...");
         }
         executor.shutdownNow();
         return result;

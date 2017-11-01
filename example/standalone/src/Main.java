@@ -1,4 +1,7 @@
+import analysis.KillMatrix;
 import analysis.MutationAnalyzer;
+import output.CSVFormatter;
+import output.Formatter;
 import prepass.Prepass;
 import prepass.TestFinder;
 import prepass.TestMethod;
@@ -10,7 +13,16 @@ import java.util.concurrent.*;
 
 public class Main {
 
-    // TODO: Implement output interface and visualization
+    // There is an inconsistency in test execution time measurement. Should timeout be measured against original
+    // execution time or a constant (for example, 1 second)?
+    // Should formatter interface be implemented by main method, analyzer object or kill matrix object? Do we need a
+    // specific formatter object, or can the kill matrix just implement the interface?
+    // Do "not covered" and "unkilled" results need to be separate? For the sake of matrix sparsity, making them both
+    // null would be better.
+
+    // Check for error via JUnit (is it an assert in the program or general runtime error?)
+    // Configure whether sparse vs fully populated matrix is built (could depend on formatter or configuration)
+    // Plugin for formatter configuration
 
     public static void main(String... args) {
         String mutatedClasspath = args[0];
@@ -24,8 +36,9 @@ public class Main {
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
             //printCoverage(coverage);
             MutationAnalyzer analyzer = new MutationAnalyzer(testClasses, coverage, logFilepath);
-            float mutationScore = analyzer.runAnalysis();
-            System.out.println("Mutation score: " + mutationScore);
+            KillMatrix matrix = analyzer.runAnalysis();
+            Formatter formatter = new Formatter(matrix);
+            CSVFormatter csvFormatter = new CSVFormatter(formatter);
         } catch (Exception e) {
             e.printStackTrace();
         }

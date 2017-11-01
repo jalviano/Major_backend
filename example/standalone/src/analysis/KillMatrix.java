@@ -1,4 +1,4 @@
-package output;
+package analysis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,16 +9,17 @@ import static utils.Constants.*;
 
 public class KillMatrix {
 
+    private float mutationScore;
     private int mutantNumber;
     private HashMap<String, ArrayList<Integer>> matrix;
 
-    public KillMatrix(int mutantNumber) {
+    KillMatrix(int mutantNumber) {
         this.mutantNumber = mutantNumber;
         matrix = new HashMap<>();
     }
 
-    Set<String> getTests() {
-        return matrix.keySet();
+    void setMutationScore(float mutationScore) {
+        this.mutationScore = mutationScore;
     }
 
     int getRows() {
@@ -29,12 +30,7 @@ public class KillMatrix {
         return mutantNumber;
     }
 
-    int getKillResult(String test, int mutant) {
-        ArrayList<Integer> mutants = matrix.get(test);
-        return mutants.get(mutant - 1);
-    }
-
-    public void addKillResult(String test, int killResult) {
+    void addKillResult(String test, Integer killResult) {
         if (matrix.containsKey(test)) {
             ArrayList<Integer> mutants = matrix.get(test);
             mutants.add(killResult);
@@ -46,11 +42,28 @@ public class KillMatrix {
         }
     }
 
-    public HashMap<String, Integer> getTestsForMutatant(int mutant) {
+    public Set<String> getTests() {
+        return matrix.keySet();
+    }
+
+    public int getMutantNumber() {
+        return mutantNumber;
+    }
+
+    public float getMutationScore() {
+        return mutationScore;
+    }
+
+    public Integer getKillResult(String test, int mutant) {
+        ArrayList<Integer> mutants = matrix.get(test);
+        return mutants.get(mutant - 1);
+    }
+
+    public HashMap<String, Integer> getTestsForMutant(int mutant) {
         HashMap<String, Integer> tests = new HashMap<>();
         for (String test : matrix.keySet()) {
             ArrayList<Integer> mutants = matrix.get(test);
-            int killResult = mutants.get(mutant);
+            Integer killResult = mutants.get(mutant);
             if (killResult != NOT_COVERED) {
                 tests.put(test, killResult);
             }
@@ -58,26 +71,19 @@ public class KillMatrix {
         return tests;
     }
 
-    public HashMap<Integer, Integer> getMutantsForTest(String test) {
+    public ArrayList<Integer> getMutantsForTest(String test) {
+        return matrix.get(test);
+    }
+
+    public HashMap<Integer, Integer> getMutantsForTest_(String test) {
         ArrayList<Integer> allMutants = matrix.get(test);
         HashMap<Integer, Integer> mutants = new HashMap<>();
         for (int i = 0; i < allMutants.size(); i++) {
-            int killResult = allMutants.get(i);
+            Integer killResult = allMutants.get(i);
             if (killResult != NOT_COVERED) {
                 mutants.put(i + 1, killResult);
             }
         }
         return mutants;
-    }
-
-    public void printOutput() {
-        for (String test : matrix.keySet()) {
-            System.out.print(test + ": ");
-            ArrayList<Integer> mutants = matrix.get(test);
-            for (int i = 0; i < mutants.size(); i++) {
-                System.out.print("[" + (i + 1) + ": " + mutants.get(i) + "]");
-            }
-            System.out.println("");
-        }
     }
 }
