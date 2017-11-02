@@ -14,7 +14,6 @@ import java.util.concurrent.*;
 import org.junit.runner.Result;
 
 import org.junit.runner.notification.Failure;
-import output.FormatterInterface;
 import prepass.TestMethod;
 import static utils.Constants.*;
 

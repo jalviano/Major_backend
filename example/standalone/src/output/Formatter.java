@@ -1,14 +1,13 @@
 package output;
 
 import analysis.KillMatrix;
+import analysis.MatrixInterface;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
-import java.util.stream.IntStream;
 
-public class Formatter implements FormatterInterface {
+public class Formatter implements MatrixInterface {
 
     private KillMatrix matrix;
 

@@ -1,6 +1,6 @@
 import analysis.KillMatrix;
 import analysis.MutationAnalyzer;
-import output.CSVFormatter;
+import output.CSVMatrix;
 import output.Formatter;
 import prepass.Prepass;
 import prepass.TestFinder;
@@ -9,7 +9,6 @@ import prepass.TestMethod;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.*;
 
 public class Main {
 
@@ -37,8 +36,9 @@ public class Main {
             //printCoverage(coverage);
             MutationAnalyzer analyzer = new MutationAnalyzer(testClasses, coverage, logFilepath);
             KillMatrix matrix = analyzer.runAnalysis();
-            Formatter formatter = new Formatter(matrix);
-            CSVFormatter csvFormatter = new CSVFormatter(formatter);
+            CSVMatrix csvFormatter = new CSVMatrix();
+            csvFormatter.setFormatter(new Formatter(matrix));
+            csvFormatter.drawOutput();
         } catch (Exception e) {
             e.printStackTrace();
         }
