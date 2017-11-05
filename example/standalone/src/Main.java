@@ -1,7 +1,6 @@
-import analysis.KillMatrix;
+import analysis.DefaultKillMatrix;
 import analysis.MutationAnalyzer;
 import output.CSVMatrix;
-import output.Formatter;
 import prepass.Prepass;
 import prepass.TestFinder;
 import prepass.TestMethod;
@@ -19,9 +18,11 @@ public class Main {
     // Do "not covered" and "unkilled" results need to be separate? For the sake of matrix sparsity, making them both
     // null would be better.
 
-    // Check for error via JUnit (is it an assert in the program or general runtime error?)
-    // Configure whether sparse vs fully populated matrix is built (could depend on formatter or configuration)
-    // Plugin for formatter configuration
+    // 2. Configure whether sparse vs fully populated matrix is built (could depend on formatter or configuration)
+    // 3. Add pipeline step interfaces
+    // 4. Add ability for user to include formatter class file
+    // 5. Add configuration for test runtime constant limit vs factor of execution time (configure offset, factor)
+    // 7. For benchmarking, report analysis time and kill matrix CSV
 
     public static void main(String... args) {
         String mutatedClasspath = args[0];
@@ -33,21 +34,12 @@ public class Main {
             testClasses = TestFinder.loadClasses(classpaths);
             Prepass prepass = new Prepass(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            //printCoverage(coverage);
             MutationAnalyzer analyzer = new MutationAnalyzer(testClasses, coverage, logFilepath);
-            KillMatrix matrix = analyzer.runAnalysis();
+            DefaultKillMatrix matrix = analyzer.runAnalysis();
             CSVMatrix csvFormatter = new CSVMatrix();
-            csvFormatter.setFormatter(new Formatter(matrix));
-            csvFormatter.drawOutput();
+            csvFormatter.drawOutput(matrix);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
-        System.out.println("Covered mutants: ");
-        for (TestMethod key : coverage.keySet()) {
-            System.out.println(key.getName() + ": " + coverage.get(key).toString());
         }
     }
 }

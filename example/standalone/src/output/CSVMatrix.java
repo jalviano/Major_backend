@@ -1,40 +1,37 @@
 package output;
 
+import analysis.DefaultKillMatrix;
+import utils.Outcome;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-import static utils.Constants.*;
+import static utils.Outcome.*;
 
-public class CSVMatrix implements FormatterInterface {
-
-    private Formatter formatter;
+public class CSVMatrix implements Formatter {
 
     public CSVMatrix() {
     }
 
-    public void setFormatter(Formatter formatter) {
-        this.formatter = formatter;
-    }
-
-    public void drawOutput() {
+    public void drawOutput(DefaultKillMatrix matrix) {
         String csvFile = "/Users/Justin/Desktop/killMatrix.csv";
         try {
             FileWriter writer = new FileWriter(csvFile);
             List<String> header = new ArrayList<>();
             header.add("");
-            for (int id : formatter.getMutantIds()) {
+            for (int id : matrix.getMutantIds()) {
                 header.add(Integer.toString(id));
             }
             CSVUtils.writeLine(writer, header);
-            for (String test : formatter.getTestNames()) {
+            for (String test : matrix.getTestNames()) {
                 List<String> line = new ArrayList<>();
                 line.add(test);
-                for (Integer result : formatter.getMutantsForTest(test)) {
+                for (Outcome result : matrix.getMutantsForTest(test)) {
                     if (result == NOT_COVERED) {
                         line.add("");
                     } else {
-                        line.add(result.toString());
+                        line.add(Integer.toString(result.getId()));
                     }
                 }
                 CSVUtils.writeLine(writer, line);
@@ -44,6 +41,6 @@ public class CSVMatrix implements FormatterInterface {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Mutation Score: " + formatter.getMutationScore());
+        System.out.println("Mutation Score: " + matrix.getMutationScore());
     }
 }

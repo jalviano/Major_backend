@@ -15,7 +15,9 @@ import org.junit.runner.Result;
 
 import org.junit.runner.notification.Failure;
 import prepass.TestMethod;
-import static utils.Constants.*;
+import utils.Outcome;
+
+import static utils.Outcome.*;
 
 public class MutationAnalyzer {
 
@@ -30,15 +32,15 @@ public class MutationAnalyzer {
         testClass = testClasses.get(1);
     }
 
-    public KillMatrix runAnalysis() {
+    public DefaultKillMatrix runAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
-        KillMatrix matrix = new KillMatrix(mutantNumber);
+        DefaultKillMatrix matrix = new DefaultKillMatrix(mutantNumber);
         for (int i = 1; i <= mutantNumber; i++) {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
-                Integer result = analyzeTest(test, i);
+                Outcome result = analyzeTest(test, i);
                 matrix.addKillResult(test.getName(), result);
                 if (result != UNKILLED && result != NOT_COVERED && !killed) {
                     killedCount++;
@@ -50,21 +52,21 @@ public class MutationAnalyzer {
         return matrix;
     }
 
-    public KillMatrix runOptimizedAnalysis() {
+    public DefaultKillMatrix runOptimizedAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
-        KillMatrix matrix = new KillMatrix(mutantNumber);
+        DefaultKillMatrix matrix = new DefaultKillMatrix(mutantNumber);
         for (int i = 1; i <= mutantNumber; i++) {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (!killed) {
-                    Integer result = analyzeTest(test, i);
+                    Outcome result = analyzeTest(test, i);
                     matrix.addKillResult(test.getName(), result);
                     killedCount++;
                     killed = true;
                 } else {
-                    matrix.addKillResult(test.getName(), NOT_COVERED);
+                    matrix.addKillResult(test.getName(), NOT_TESTED);
                 }
             }
         }
@@ -88,7 +90,7 @@ public class MutationAnalyzer {
         return mutantNumber;
     }
 
-    private Integer analyzeTest(TestMethod test, int mutantId) {
+    private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
             Result result = timeAnalyzer(test);
             if (result == null) {
@@ -123,12 +125,19 @@ public class MutationAnalyzer {
         TestTask task = new TestTask(testClass, test);
         Future<String> future = executor.submit(task);
         try {
-            future.get(test.getExecTime(), TimeUnit.MILLISECONDS);
+            future.get(getTimeout(test), TimeUnit.MILLISECONDS);
             result = task.getResult();
         } catch (Exception e) {
             future.cancel(true);
         }
         executor.shutdownNow();
         return result;
+    }
+
+    private long getTimeout(TestMethod test) {
+        long offset = 1000;
+        int factor = 10;
+        long execTime = test.getExecTime();
+        return offset + execTime + (execTime / factor);
     }
 }
