@@ -1,6 +1,5 @@
 package output;
 
-import analysis.DefaultKillMatrix;
 import utils.Outcome;
 
 import java.io.FileWriter;

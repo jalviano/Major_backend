@@ -6,12 +6,12 @@ import org.junit.runner.Request;
 
 import java.util.*;
 
-public class Prepass {
+public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
 
     private Class<?> testClass;
 
-    public Prepass(List<Class<?>> testClasses) {
-        testClass = testClasses.get(1);
+    public DefaultPrepassAnalyzer(List<Class<?>> testClasses) {
+        testClass = testClasses.get(0);
     }
 
     public HashMap<TestMethod, ArrayList<Integer>> runPrepass() {

@@ -1,4 +1,4 @@
-package analysis;
+package output;
 
 import utils.Outcome;
 

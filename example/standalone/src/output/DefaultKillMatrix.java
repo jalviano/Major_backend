@@ -1,4 +1,4 @@
-package analysis;
+package output;
 
 import utils.Outcome;
 
@@ -14,7 +14,7 @@ public class DefaultKillMatrix implements KillMatrix, KillMatrixBuilder {
     private int mutantNumber;
     private HashMap<String, ArrayList<Outcome>> matrix;
 
-    DefaultKillMatrix(int mutantNumber) {
+    public DefaultKillMatrix(int mutantNumber) {
         this.mutantNumber = mutantNumber;
         matrix = new HashMap<>();
     }
