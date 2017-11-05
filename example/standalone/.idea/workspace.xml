@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/MatrixView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/Constants.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/KillMatrix.java" afterPath="$PROJECT_DIR$/src/analysis/DefaultKillMatrix.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/MatrixInterface.java" afterPath="$PROJECT_DIR$/src/analysis/KillMatrix.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/FormatterInterface.java" afterPath="$PROJECT_DIR$/src/output/Formatter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/CSVMatrix.java" afterPath="$PROJECT_DIR$/src/output/CSVMatrix.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -610,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509582350526</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Kill matrix output formatting updated.">
+      <created>1509911138830</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1509911138830</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -655,7 +654,8 @@
     <MESSAGE value="Updated output visualization." />
     <MESSAGE value="New output visualization interface added." />
     <MESSAGE value="Output visualization API updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Output visualization API updated." />
+    <MESSAGE value="Kill matrix output formatting updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kill matrix output formatting updated." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
