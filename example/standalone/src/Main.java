@@ -15,25 +15,30 @@ public class Main {
     // In standalone implementation, the kill matrix provides data for each test method, not test class. The existing
     // implementation only shows data for test classes though. Which is needed?
 
-    // 1. Configure whether sparse vs fully populated matrix is built (could depend on formatter or configuration)
-    // 2. Add ability for user to include formatter class file
-    // 3. Add configuration for test runtime constant limit vs factor of execution time (configure offset, factor)
-    // 4. Improve main method arguments and filepath needs
+    // 1. Add ability for user to include formatter class file
+    // 2. Improve backend build and run method (currently shell script, would be better with build.xml)
 
     public static void main(String... args) {
-        String logFilepath = args[0];
-        String mutatedClasspath = args[1];
-        String[] testClasspaths = Arrays.copyOfRange(args, 2, args.length);
+        Boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);
+        int offset = Integer.parseInt(args[1]);
+        int factor = Integer.parseInt(args[2]);
+        String logFilepath = args[3];
+        String[] testDirectories = Arrays.copyOfRange(args, 4, args.length);
         List<Class<?>> testClasses;
         try {
-            testClasses = TestFinder.loadClasses(testClasspaths);
+            testClasses = TestFinder.loadClasses(testDirectories);
             // 1. PREPASS
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
             // printCoverage(coverage);
             // 2. MUTATION ANALYSIS
-            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath);
-            DefaultKillMatrix matrix = analyzer.runCompleteAnalysis();
+            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath, offset, factor);
+            DefaultKillMatrix matrix;
+            if (outputFullKillMatrix) {
+                matrix = analyzer.runCompleteAnalysis();
+            } else {
+                matrix = analyzer.runSparseAnalysis();
+            }
             // 3. RESULTS OUTPUT
             CSVMatrix csvFormatter = new CSVMatrix();
             csvFormatter.drawOutput(matrix);

@@ -14,17 +14,45 @@ import java.util.*;
 
 public class TestFinder {
 
-    public static List<Class<?>> loadClasses(String[] classpaths) throws ClassNotFoundException, IOException {
+    public static List<Class<?>> loadClasses(String[] testDirectories) throws IOException {
         List<Class<?>> classes = new ArrayList<>();
-        for (String classpath : classpaths) {
-            String classname = getClassName(classpath);
-            String packageBase = classpath.substring(0, classpath.length() - (classname + ".class").length());
-            Class<?> cls = new URLClassLoader(new URL[] {
-                    new File(packageBase).toURI().toURL()
-            }).loadClass(classname);
-            classes.add(cls);
+        for (String directory : testDirectories) {
+            File folder = new File(directory);
+            String[] paths = folder.list();
+            getClassPaths(directory, paths, classes);
         }
+        //System.out.println("Test class number: " + classes.size());
         return classes;
+    }
+
+    private static void getClassPaths(String directory, String[] paths, List<Class<?>> classes) throws IOException {
+        boolean hasSubdirectory = true;
+        while (hasSubdirectory) {
+            boolean noSubDirectory = true;
+            for (String path : paths) {
+                String filepath = directory + path;
+                File subfolder = new File(filepath);
+                if (subfolder.isDirectory()) {
+                    noSubDirectory = false;
+                    getClassPaths(filepath + "/", subfolder.list(), classes);
+                } else if (path.endsWith(".class")) {
+                    String classname = getClassName(filepath);
+                    String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
+                    try {
+                        Class<?> cls = new URLClassLoader(new URL[]{
+                                new File(packageBase).toURI().toURL()
+                        }).loadClass(classname);
+                        classes.add(cls);
+                    } catch (ClassNotFoundException e) {
+                        System.out.println("ClassNotFoundException: " + filepath);
+                    } catch (NullPointerException e) {
+                        System.out.println("NullPointerException: " + filepath);
+                    }
+                    noSubDirectory = true;
+                }
+            }
+            hasSubdirectory = !noSubDirectory;
+        }
     }
 
     private static String getClassName(String pathToClassFile) throws IOException {

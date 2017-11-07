@@ -9,9 +9,11 @@ BIN_PATH="../bin/"
 SRC_FULL=${BIN_PATH}/${SRC_PATH}
 TST_FULL=${BIN_PATH}/${TST_PATH}
 
+OUTPUT_FULL_KILL_MATRIX=false
+OFFSET=1
+FACTOR=10
 LOG_FILEPATH="mutants.log"
-MUTATED_CLASSPATH="../bin/triangle/Triangle.class"
-TEST_CLASSPATH="../bin/triangle/test/TestSuite.class"
+TEST_DIRECTORY="../bin/triangle/test/"
 
 echo "- Compiling test suite..."
 ${MAJOR_HOME}/bin/javac -Xlint:none -sourcepath ${BIN_PATH} -cp .:${SRC_PATH}/*.class:${MAJOR_HOME}/lib/junit-4.11.jar ${TST_FULL}/*.java
@@ -34,4 +36,4 @@ ${MAJOR_HOME}/bin/javac -Xlint:none -cp .:${MAJOR_HOME}/config/config.jar:${MAJO
 echo
 echo
 echo "- Performing analysis..."
-java -cp ${OUTPUT}:${MAJOR_HOME}/config/config.jar:${MAJOR_HOME}/lib/junit-4.11.jar Main ${LOG_FILEPATH} ${MUTATED_CLASSPATH} ${TEST_CLASSPATH}
+java -cp ${OUTPUT}:${MAJOR_HOME}/config/config.jar:${MAJOR_HOME}/lib/junit-4.11.jar Main ${OUTPUT_FULL_KILL_MATRIX} ${OFFSET} ${FACTOR} ${LOG_FILEPATH} ${TEST_DIRECTORY}

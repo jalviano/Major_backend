@@ -4,16 +4,12 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-public class CSVUtils {
+class CSVUtils {
 
     private static final char DEFAULT_SEPARATOR = ',';
 
     static void writeLine(Writer w, List<String> values) throws IOException {
         newLine(w, values, DEFAULT_SEPARATOR, ' ');
-    }
-
-    public static void writeLine(Writer w, List<String> values, char separators) throws IOException {
-        newLine(w, values, separators, ' ');
     }
 
     private static String followCVSformat(String value) {

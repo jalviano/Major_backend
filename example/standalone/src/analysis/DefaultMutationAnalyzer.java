@@ -24,11 +24,15 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
     private HashMap<TestMethod, ArrayList<Integer>> coverage;
     private String logFilepath;
+    private int offset = 0;
+    private int factor = 1;
 
     public DefaultMutationAnalyzer(HashMap<TestMethod, ArrayList<Integer>> coverage,
-                                   String logFilepath) {
+                                   String logFilepath, int offset, int factor) {
         this.coverage = coverage;
         this.logFilepath = logFilepath;
+        this.offset = offset;
+        this.factor = factor;
     }
 
     public DefaultKillMatrix runCompleteAnalysis() {
@@ -62,8 +66,10 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
                 if (!killed) {
                     Outcome result = analyzeTest(test, i);
                     matrix.addKillResult(test.getName(), result);
-                    killedCount++;
-                    killed = true;
+                    if (result != UNKILLED && result != NOT_COVERED) {
+                        killedCount++;
+                        killed = true;
+                    }
                 } else {
                     matrix.addKillResult(test.getName(), NOT_TESTED);
                 }
@@ -134,9 +140,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
     }
 
     private long getTimeout(TestMethod test) {
-        long offset = 1000;
-        int factor = 10;
         long execTime = test.getExecTime();
-        return offset + execTime + (execTime / factor);
+        return (offset * 1000) + execTime + (execTime / factor);
     }
 }
