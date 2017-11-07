@@ -35,8 +35,14 @@ public class TestFinder {
             String line;
             while (null != (line = reader.readLine())) {
                 if (line.startsWith("public class")) {
-                    classname = line.split(" ")[2];
-                    break;
+                    if (line.contains("<")) {
+                        String pre = line.split(" ")[2];
+                        classname = pre.split("<")[0];
+                        break;
+                    } else {
+                        classname = line.split(" ")[2];
+                        break;
+                    }
                 }
             }
         }
@@ -50,7 +56,7 @@ public class TestFinder {
                 for (Method m : cls.getMethods()) {
                     tests.add(new TestMethod(cls, m.getName() + test.getDisplayName()));
                 }
-            } else {
+            } else if (test.getMethodName().startsWith("test") || test.getMethodName().endsWith("Test")) {
                 tests.add(new TestMethod(test.getTestClass(), test.getMethodName()));
             }
         }

@@ -24,13 +24,11 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
     private HashMap<TestMethod, ArrayList<Integer>> coverage;
     private String logFilepath;
-    private Class<?> testClass;
 
-    public DefaultMutationAnalyzer(List<Class<?>> testClasses, HashMap<TestMethod, ArrayList<Integer>> coverage,
+    public DefaultMutationAnalyzer(HashMap<TestMethod, ArrayList<Integer>> coverage,
                                    String logFilepath) {
         this.coverage = coverage;
         this.logFilepath = logFilepath;
-        testClass = testClasses.get(0);
     }
 
     public DefaultKillMatrix runCompleteAnalysis() {
@@ -123,7 +121,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
     private Result timeAnalyzer(TestMethod test) {
         Result result = null;
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        TestTask task = new TestTask(testClass, test);
+        TestTask task = new TestTask(test.getTestClass(), test);
         Future<String> future = executor.submit(task);
         try {
             future.get(getTimeout(test), TimeUnit.MILLISECONDS);

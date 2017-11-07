@@ -8,7 +8,7 @@ public class CSVUtils {
 
     private static final char DEFAULT_SEPARATOR = ',';
 
-    public static void writeLine(Writer w, List<String> values) throws IOException {
+    static void writeLine(Writer w, List<String> values) throws IOException {
         newLine(w, values, DEFAULT_SEPARATOR, ' ');
     }
 

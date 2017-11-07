@@ -40,6 +40,6 @@ public class CSVMatrix implements Formatter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Mutation Score: " + matrix.getMutationScore());
+        System.out.println("Mutation Score: " + (matrix.getMutationScore() * 100) + "%");
     }
 }
