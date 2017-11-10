@@ -8,13 +8,13 @@ import java.util.*;
 
 import static utils.Outcome.*;
 
-public class CSVMatrix implements Formatter {
+public class CSVFormatter implements Formatter {
 
-    public CSVMatrix() {
+    public CSVFormatter() {
     }
 
     public void drawOutput(DefaultKillMatrix matrix) {
-        String csvFile = "/Users/Justin/Desktop/killMatrix.csv";
+        String csvFile = "./killMatrix.csv";
         try {
             FileWriter writer = new FileWriter(csvFile);
             List<String> header = new ArrayList<>();

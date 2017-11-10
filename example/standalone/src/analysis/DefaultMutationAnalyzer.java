@@ -17,6 +17,7 @@ import org.junit.runner.notification.Failure;
 import output.DefaultKillMatrix;
 import prepass.TestMethod;
 import utils.Outcome;
+import utils.TimeoutAnalyzer;
 
 import static utils.Outcome.*;
 
@@ -126,21 +127,16 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
     private Result timeAnalyzer(TestMethod test) {
         Result result = null;
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        TestTask task = new TestTask(test.getTestClass(), test);
-        Future<String> future = executor.submit(task);
         try {
-            future.get(getTimeout(test), TimeUnit.MILLISECONDS);
-            result = task.getResult();
+            result = TimeoutAnalyzer.runWithTimeout(new TestTask(test.getTestClass(), test), getTimeout(test), TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            future.cancel(true);
+            System.out.println(test.getName() + " timed out...");
         }
-        executor.shutdownNow();
         return result;
     }
 
     private long getTimeout(TestMethod test) {
         long execTime = test.getExecTime();
-        return (offset * 1000) + execTime + (execTime / factor);
+        return offset * 1000 + execTime * factor;
     }
 }

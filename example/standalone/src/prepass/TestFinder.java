@@ -21,7 +21,7 @@ public class TestFinder {
             String[] paths = folder.list();
             getClassPaths(directory, paths, classes);
         }
-        //System.out.println("Test class number: " + classes.size());
+        System.out.println("Test class number: " + classes.size());
         return classes;
     }
 
@@ -35,11 +35,11 @@ public class TestFinder {
                 if (subfolder.isDirectory()) {
                     noSubDirectory = false;
                     getClassPaths(filepath + "/", subfolder.list(), classes);
-                } else if (path.endsWith(".class")) {
+                } else if (path.contains("Test.class")) {
                     String classname = getClassName(filepath);
                     String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
                     try {
-                        Class<?> cls = new URLClassLoader(new URL[]{
+                        Class<?> cls = new URLClassLoader(new URL[] {
                                 new File(packageBase).toURI().toURL()
                         }).loadClass(classname);
                         classes.add(cls);
@@ -47,6 +47,8 @@ public class TestFinder {
                         System.out.println("ClassNotFoundException: " + filepath);
                     } catch (NullPointerException e) {
                         System.out.println("NullPointerException: " + filepath);
+                    } catch (Exception e) {
+                        System.out.println("Exception: " + filepath);
                     }
                     noSubDirectory = true;
                 }

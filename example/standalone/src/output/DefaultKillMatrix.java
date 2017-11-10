@@ -64,7 +64,7 @@ public class DefaultKillMatrix implements KillMatrix, KillMatrixBuilder {
         HashMap<String, Outcome> tests = new HashMap<>();
         for (String test : matrix.keySet()) {
             ArrayList<Outcome> mutants = matrix.get(test);
-            Outcome killResult = mutants.get(mutant);
+            Outcome killResult = mutants.get(mutant - 1);
             if (killResult != NOT_COVERED) {
                 tests.put(test, killResult);
             }

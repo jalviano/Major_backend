@@ -16,6 +16,7 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
 
     public HashMap<TestMethod, ArrayList<Integer>> runPrepass() {
         HashMap<TestMethod, ArrayList<Integer>> coverage = new HashMap<>();
+        HashSet<Integer> totalCovered = new HashSet<>();
         for (Class<?> testClass : testClasses) {
             Collection<TestMethod> testMethods = TestFinder.getTestMethods(testClass);
             for (TestMethod testMethod : testMethods) {
@@ -28,10 +29,12 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
                 ArrayList<Integer> testCoverage = new ArrayList<>();
                 List<Integer> covered = Config.getCoverageList();
                 testCoverage.addAll(covered);
+                totalCovered.addAll(covered);
                 coverage.put(testMethod, testCoverage);
                 Config.reset();
             }
         }
+        System.out.println("Mutants covered: " + totalCovered.size());
         return coverage;
     }
 }
