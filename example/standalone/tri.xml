@@ -1,0 +1,124 @@
+<project name="StandaloneBackend" default="compile" basedir=".">
+
+    <property name="mutOp" value=":ALL"/>
+    <property name="mutator" value="-XMutator${mutOp}"/>
+    <property name="major" value="../../bin/javac"/>
+    <property name="config" value="../../config/config.jar"/>
+    <property name="junit" value="../../lib/junit-4.11.jar"/>
+
+    <property name="outputFullKillMatrix" value="true"/>
+    <property name="offset" value="1"/>
+    <property name="factor" value="4"/>
+    <property name="logFilePath" value="mutants.log"/>
+    <property name="testDirectory" value="bin/triangle/test/"/>
+
+    <!-- Target to clean up -->
+    <target name="clean" description="Clean">
+        <delete dir="bin"/>
+        <delete>
+            <fileset dir="." includes="*.csv"/>
+            <fileset dir="." includes="*.log"/>
+        </delete>
+    </target>
+
+    <!-- Target to initialize build -->
+    <target name="init">
+        <mkdir dir="bin"/>
+    </target>
+
+    <!-- Target to compile the project -->
+    <target name="compile" depends="init" description="Compile">
+        <javac includeantruntime="true"
+               srcdir="triangle/src/triangle"
+               destdir="bin"
+               debug="yes"
+               fork="yes"
+               executable="${major}">
+            <compilerarg value="${mutator}"/>
+            <compilerarg value="-Xlint:none"/>
+        </javac>
+    </target>
+
+    <!-- Target to compile the test suite -->
+    <target name="compile.tests" depends="compile" description="Compile all tests">
+        <javac includeantruntime="true"
+               srcdir="triangle/test/triangle/test"
+               destdir="bin"
+               debug="yes">
+            <classpath>
+                <pathelement location="${junit}"/>
+            </classpath>
+            <compilerarg value="-Xlint:none"/>
+        </javac>
+    </target>
+
+    <!-- The original test target -->
+    <target name="test" depends="compile.tests" description="Run all unit test cases">
+        <echo message="Running unit tests ..."/>
+        <junit printsummary="true"
+               showoutput="true"
+               haltonfailure="false">
+            <formatter type="plain" usefile="false"/>
+            <classpath path="bin"/>
+            <batchtest fork="no">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <!-- Target to compile the analysis backend -->
+    <target name="compile.analysis" description="Compile mutation analysis backend">
+        <echo message="Compiling mutation analysis backend..."/>
+        <javac includeantruntime="true"
+               srcdir="src"
+               destdir="production"
+               executable="${major}">
+            <compilerarg value="-Xlint:none"/>
+            <classpath>
+                <pathelement location="${config}"/>
+                <pathelement location="${junit}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="run.analysis" depends="compile.analysis" description="Run mutation analysis for all unit test cases">
+        <echo message="Running mutation analysis backend..."/>
+        <java classname="Main">
+            <arg value="${outputFullKillMatrix}"/>
+            <arg value="${offset}"/>
+            <arg value="${factor}"/>
+            <arg value="${logFilePath}"/>
+            <arg value="${testDirectory}"/>
+            <classpath>
+                <pathelement location="production"/>
+                <pathelement location="${config}"/>
+                <pathelement location="${junit}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- The adapted mutation test target -->
+    <target name="mutation.test" description="Run mutation analysis for all unit test cases">
+        <echo message="Running mutation analysis ..."/>
+        <junit printsummary="false"
+               showoutput="false"
+               mutationAnalysis="true"
+               sort="sort_methods"
+               exportKillMap="true"
+               resultFile="results.csv"
+               killDetailsFile="killed.csv">
+            <classpath>
+                <pathelement location="${junit}"/>
+                <pathelement location="bin"/>
+            </classpath>
+            <batchtest fork="false">
+                <fileset dir="triangle/test">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+</project>

@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/output/CSVKilledFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/TimeoutAnalyzer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tri.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/triangle/Triangle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/triangle/test/TestSuite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mutants.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/run.sh" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/CSVMatrix.java" afterPath="$PROJECT_DIR$/src/output/CSVFormatter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/TestTask.java" afterPath="$PROJECT_DIR$/src/analysis/TestTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/DefaultKillMatrix.java" afterPath="$PROJECT_DIR$/src/output/DefaultKillMatrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -197,24 +181,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -650,12 +616,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510090147003</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add new build file configuration options, updated test timeout methods.">
+      <created>1510332611865</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1510332611865</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="815" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -671,7 +643,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4189383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22174536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22174536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32424676" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -700,7 +672,8 @@
     <MESSAGE value="Updated run script and pipeline interfaces." />
     <MESSAGE value="Minor improvements to functionality, improved log reporting." />
     <MESSAGE value="Fixed analyzer optimized analysis, updated test finder, added configuration options." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed analyzer optimized analysis, updated test finder, added configuration options." />
+    <MESSAGE value="Add new build file configuration options, updated test timeout methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new build file configuration options, updated test timeout methods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
