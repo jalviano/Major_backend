@@ -39,7 +39,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         this.factor = factor;
     }
 
-    public DefaultKillMatrix runCompleteAnalysis() {
+    public DefaultKillMatrix runFullAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
         DefaultKillMatrix matrix = new DefaultKillMatrix(mutantNumber);
@@ -47,7 +47,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
-                Outcome result = analyzeTest(test, i);
+                Outcome result = analyzeTestStop(test, i);
                 matrix.addKillResult(test.getName(), result);
                 if (result != UNKILLED && result != NOT_COVERED && !killed) {
                     killedCount++;
@@ -68,7 +68,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (!killed) {
-                    Outcome result = analyzeTest(test, i);
+                    Outcome result = analyzeTestDefault(test, i);
                     matrix.addKillResult(test.getName(), result);
                     if (result != UNKILLED && result != NOT_COVERED) {
                         killedCount++;
@@ -83,25 +83,29 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return matrix;
     }
 
-    private int totalMutantNumber() {
-        int mutantNumber = 0;
-        try {
-            FileInputStream stream = new FileInputStream(logFilepath);
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
-                String line;
-                while (null != (line = reader.readLine())) {
-                    mutantNumber++;
+    // Default analyzeTest() method -- main thread does not exit if tests timeout
+    private Outcome analyzeTestDefault(TestMethod test, int mutantId) {
+        if (coverage.get(test).contains(mutantId)) {
+            Result result = timeAnalyzer(test);
+            if (result == null) {
+                return TIMEOUT;
+            } else if (result.getFailureCount() != 0) {
+                if (isAssertionError(result)) {
+                    return ASSERTION_ERROR;
+                } else {
+                    return GENERAL_EXCEPTION;
                 }
+            } else {
+                return UNKILLED;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            return NOT_COVERED;
         }
-        return mutantNumber;
     }
 
-    private Outcome analyzeTest(TestMethod test, int mutantId) {
+    // Creates new thread when running tests and uses Thread.stop() to kill threads that timeout -- deprecated method
+    private Outcome analyzeTestStop(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            //Result result = timeAnalyzer(test);
             Result result = TimeoutRunner.runTest(test, getTimeout(test));
             if (result == null) {
                 return TIMEOUT;
@@ -119,7 +123,8 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         }
     }
 
-    private Outcome _analyzeTest(TestMethod test, int mutantId) {
+    // Uses reflection and isolated thread to run tests -- problem accessing test classes via reflection
+    private Outcome analyzeTestIsolated(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
             analysis.runners.Outcome result = TestRunner.runTest(new WorkOrder(test, mutantId, getTimeout(test)));
             if (result.type == analysis.runners.Outcome.Type.TIMEOUT) {
@@ -140,6 +145,21 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         }
     }
 
+    private int totalMutantNumber() {
+        int mutantNumber = 0;
+        try {
+            FileInputStream stream = new FileInputStream(logFilepath);
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+                String line;
+                while (null != (line = reader.readLine())) {
+                    mutantNumber++;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return mutantNumber;
+    }
 
     private boolean isAssertionError(Result result) {
         List<Failure> failures = result.getFailures();

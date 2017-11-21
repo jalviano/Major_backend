@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Add new build file configuration options, updated test timeout methods.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/DeadEndDigestOutputStream.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/IsolatingClassLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/Outcome.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/TestRunnable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/TestRunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/runners/WorkOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/timeout/TimeoutRunnable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/timeout/TimeoutRunner.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../killMatrix.csv" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/utils/TestFinder.java" />
+    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/killMatrix.csv" afterPath="$PROJECT_DIR$/killMatrix.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/TestTask.java" afterPath="$PROJECT_DIR$/src/analysis/TestTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestMethod.java" afterPath="$PROJECT_DIR$/src/prepass/TestMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tri.xml" afterPath="$PROJECT_DIR$/tri.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -34,37 +19,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="62" column="37" lean-forward="false" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="103" column="49" lean-forward="true" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+            <state relative-caret-position="495">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="method#DefaultMutationAnalyzer#0;class#DefaultMutationAnalyzer#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeoutRunnable.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TimeoutRunnable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,7 +84,6 @@
         <option value="$PROJECT_DIR$/src/output/KillMatrixBuilder.java" />
         <option value="$PROJECT_DIR$/src/prepass/Prepass.java" />
         <option value="$PROJECT_DIR$/src/output/CSVMatrix.java" />
-        <option value="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/output/CSVUtils.java" />
         <option value="$PROJECT_DIR$/src/output/DefaultKillMatrix.java" />
         <option value="$PROJECT_DIR$/triangle.xml" />
@@ -130,7 +100,6 @@
         <option value="$PROJECT_DIR$/triangle/src/triangle/Triangle.java" />
         <option value="$PROJECT_DIR$/src/output/CSVFormatter.java" />
         <option value="$PROJECT_DIR$/src/output/CSVKilledFormatter.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
         <option value="$PROJECT_DIR$/src/analysis/IsolatingClassLoader.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestRunner.java" />
@@ -149,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/utils/TimeoutAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestTask.java" />
         <option value="$PROJECT_DIR$/src/analysis/runners/TestRunner.java" />
-        <option value="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestRunnable.java" />
         <option value="$PROJECT_DIR$/src/analysis/runners/TestRunnable.java" />
         <option value="$PROJECT_DIR$/src/analysis/TimeoutRunnable.java" />
@@ -157,6 +125,9 @@
         <option value="$PROJECT_DIR$/src/analysis/TimeoutRunner.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestBuilder.java" />
         <option value="$PROJECT_DIR$/src/analysis/timeout/TimeoutRunner.java" />
+        <option value="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -206,6 +177,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,11 +651,19 @@
       <option name="project" value="LOCAL" />
       <updated>1510332798219</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Modified JUnit test timeout methods.">
+      <created>1511288221250</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1511288221250</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="814" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -657,10 +676,10 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.397711" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855093" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3701578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36925286" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23104435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23104435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -690,7 +709,8 @@
     <MESSAGE value="Minor improvements to functionality, improved log reporting." />
     <MESSAGE value="Fixed analyzer optimized analysis, updated test finder, added configuration options." />
     <MESSAGE value="Add new build file configuration options, updated test timeout methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new build file configuration options, updated test timeout methods." />
+    <MESSAGE value="Modified JUnit test timeout methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified JUnit test timeout methods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,13 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/MutationAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -843,13 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/triangle/Triangle.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -899,6 +905,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -928,6 +935,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -943,6 +951,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -978,34 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TimeoutRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="103" column="49" lean-forward="true" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
-          <folding>
-            <element signature="method#DefaultMutationAnalyzer#0;class#DefaultMutationAnalyzer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/TimeoutAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1023,6 +1004,48 @@
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TimeoutRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="62" column="37" lean-forward="false" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/MutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="method#DefaultMutationAnalyzer#0;class#DefaultMutationAnalyzer#0" expanded="false" />
           </folding>
         </state>
       </provider>

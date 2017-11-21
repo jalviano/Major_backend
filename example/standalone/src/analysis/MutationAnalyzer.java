@@ -4,6 +4,6 @@ import output.DefaultKillMatrix;
 
 public interface MutationAnalyzer {
 
-    DefaultKillMatrix runCompleteAnalysis();
+    DefaultKillMatrix runFullAnalysis();
     DefaultKillMatrix runSparseAnalysis();
 }

@@ -56,7 +56,7 @@ public class Main {
             DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath, offset, factor);
             DefaultKillMatrix matrix;
             if (outputFullKillMatrix) {
-                matrix = analyzer.runCompleteAnalysis();
+                matrix = analyzer.runFullAnalysis();
             } else {
                 matrix = analyzer.runSparseAnalysis();
             }
