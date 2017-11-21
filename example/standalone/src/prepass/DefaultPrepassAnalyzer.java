@@ -3,6 +3,7 @@ package prepass;
 import major.mutation.Config;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
+import utils.TestFinder;
 
 import java.util.*;
 

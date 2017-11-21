@@ -1,5 +1,8 @@
 package analysis;
 
+import analysis.runners.TestRunner;
+import analysis.runners.WorkOrder;
+import analysis.timeout.TimeoutRunner;
 import major.mutation.Config;
 
 import java.io.BufferedReader;
@@ -98,7 +101,8 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
     private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = timeAnalyzer(test);
+            //Result result = timeAnalyzer(test);
+            Result result = TimeoutRunner.runTest(test, getTimeout(test));
             if (result == null) {
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
@@ -114,6 +118,28 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             return NOT_COVERED;
         }
     }
+
+    private Outcome _analyzeTest(TestMethod test, int mutantId) {
+        if (coverage.get(test).contains(mutantId)) {
+            analysis.runners.Outcome result = TestRunner.runTest(new WorkOrder(test, mutantId, getTimeout(test)));
+            if (result.type == analysis.runners.Outcome.Type.TIMEOUT) {
+                System.out.println(test.getName() + " timed out...");
+                return TIMEOUT;
+            } else if (result.type == analysis.runners.Outcome.Type.FAIL) {
+                //System.out.println(test.getName() + " failed...");
+                return ASSERTION_ERROR;
+            } else if (result.type == analysis.runners.Outcome.Type.CRASH) {
+                //System.out.println(test.getName() + " crashed...");
+                return GENERAL_EXCEPTION;
+            } else {
+                //System.out.println(test.getName() + " passed...");
+                return UNKILLED;
+            }
+        } else {
+            return NOT_COVERED;
+        }
+    }
+
 
     private boolean isAssertionError(Result result) {
         List<Failure> failures = result.getFailures();

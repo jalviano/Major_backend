@@ -7,7 +7,7 @@ public class TestMethod implements Comparable<TestMethod> {
     private static final char SEPARATOR = '#';
     private long execTime;
 
-    TestMethod(Class<?> testClass, String name) {
+    public TestMethod(Class<?> testClass, String name) {
         this.testClass = testClass;
         this.name = name;
     }

@@ -1,7 +1,8 @@
-package prepass;
+package utils;
 
 import org.junit.runner.Description;
 import org.junit.runner.Request;
+import prepass.TestMethod;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -79,7 +80,7 @@ public class TestFinder {
         return classname;
     }
 
-    static Collection<TestMethod> getTestMethods(Class<?> cls) {
+    public static Collection<TestMethod> getTestMethods(Class<?> cls) {
         Vector<TestMethod> tests = new Vector<>();
         for (Description test : Request.aClass(cls).getRunner().getDescription().getChildren()) {
             if (test.getMethodName() == null) {
@@ -92,5 +93,18 @@ public class TestFinder {
         }
         Collections.sort(tests);
         return tests;
+    }
+
+    public static String getTestFullName(TestMethod test, String separator) {
+        return test.getTestClass().getName() + separator + test.getName();
+    }
+
+    public static TestMethod parseTestFullName(String testFullName, String separator) throws IllegalArgumentException,
+            NoSuchMethodException, ClassNotFoundException {
+        String[] class_method = testFullName.split(separator, 2);
+        if (class_method.length != 2) {
+            throw new IllegalArgumentException(testFullName);
+        }
+        return new TestMethod(Class.forName(class_method[0]), class_method[1]);
     }
 }

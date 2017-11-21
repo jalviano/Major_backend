@@ -2,7 +2,7 @@ import output.DefaultKillMatrix;
 import analysis.DefaultMutationAnalyzer;
 import output.CSVFormatter;
 import prepass.DefaultPrepassAnalyzer;
-import prepass.TestFinder;
+import utils.TestFinder;
 import prepass.TestMethod;
 
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Main {
 
+    // Check number of timeouts
     // Why are some threads not being killed?
     // Are tests loaded never reloading underlying class?
-    // Check number of timeouts
 
     // 1. Add ability for user to include formatter class file
     // 2. Fix build.xml file so it can run analysis

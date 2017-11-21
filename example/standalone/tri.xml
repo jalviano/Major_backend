@@ -73,6 +73,7 @@
         <echo message="Compiling mutation analysis backend..."/>
         <javac includeantruntime="true"
                srcdir="src"
+               debug="yes"
                destdir="production"
                executable="${major}">
             <compilerarg value="-Xlint:none"/>
