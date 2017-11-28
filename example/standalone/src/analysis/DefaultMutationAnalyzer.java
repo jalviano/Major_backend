@@ -1,8 +1,5 @@
 package analysis;
 
-import analysis.runners.TestRunner;
-import analysis.runners.WorkOrder;
-import analysis.timeout.TimeoutRunner;
 import major.mutation.Config;
 
 import java.io.BufferedReader;
@@ -12,7 +9,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.*;
 
 import org.junit.runner.Result;
 
@@ -20,7 +16,6 @@ import org.junit.runner.notification.Failure;
 import output.DefaultKillMatrix;
 import prepass.TestMethod;
 import utils.Outcome;
-import utils.TimeoutAnalyzer;
 
 import static utils.Outcome.*;
 
@@ -47,7 +42,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             boolean killed = false;
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
-                Outcome result = analyzeTestStop(test, i);
+                Outcome result = analyzeTest(test, i);
                 matrix.addKillResult(test.getName(), result);
                 if (result != UNKILLED && result != NOT_COVERED && !killed) {
                     killedCount++;
@@ -68,7 +63,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 if (!killed) {
-                    Outcome result = analyzeTestDefault(test, i);
+                    Outcome result = analyzeTest(test, i);
                     matrix.addKillResult(test.getName(), result);
                     if (result != UNKILLED && result != NOT_COVERED) {
                         killedCount++;
@@ -83,65 +78,22 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return matrix;
     }
 
-    // Default analyzeTest() method -- main thread does not exit if tests timeout
-    private Outcome analyzeTestDefault(TestMethod test, int mutantId) {
+    private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = timeAnalyzer(test, mutantId);
+            Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
             if (result == null) {
+                System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
                 if (isAssertionError(result)) {
+                    System.out.println("[" + mutantId + ", " + test.getName() + "]: fail");
                     return ASSERTION_ERROR;
                 } else {
+                    System.out.println("[" + mutantId + ", " + test.getName() + "]: crash");
                     return GENERAL_EXCEPTION;
                 }
             } else {
-                return UNKILLED;
-            }
-        } else {
-            return NOT_COVERED;
-        }
-    }
-
-    // Creates new thread when running tests and uses Thread.stop() to kill threads that timeout -- deprecated method
-    private Outcome analyzeTestStop(TestMethod test, int mutantId) {
-        if (coverage.get(test).contains(mutantId)) {
-            Result result = TimeoutRunner.runTest(test, getTimeout(test), mutantId);
-            if (result == null) {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: timed out...");
-                return TIMEOUT;
-            } else if (result.getFailureCount() != 0) {
-                if (isAssertionError(result)) {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: failed...");
-                    return ASSERTION_ERROR;
-                } else {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: crashed...");
-                    return GENERAL_EXCEPTION;
-                }
-            } else {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: passed...");
-                return UNKILLED;
-            }
-        } else {
-            return NOT_COVERED;
-        }
-    }
-
-    // Uses reflection and isolated thread to run tests -- problem accessing test classes via reflection
-    private Outcome analyzeTestIsolated(TestMethod test, int mutantId) {
-        if (coverage.get(test).contains(mutantId)) {
-            analysis.runners.Outcome result = TestRunner.runTest(new WorkOrder(test, mutantId, getTimeout(test)));
-            if (result.type == analysis.runners.Outcome.Type.TIMEOUT) {
-                System.out.println(test.getName() + " timed out...");
-                return TIMEOUT;
-            } else if (result.type == analysis.runners.Outcome.Type.FAIL) {
-                //System.out.println(test.getName() + " failed...");
-                return ASSERTION_ERROR;
-            } else if (result.type == analysis.runners.Outcome.Type.CRASH) {
-                //System.out.println(test.getName() + " crashed...");
-                return GENERAL_EXCEPTION;
-            } else {
-                //System.out.println(test.getName() + " passed...");
+                System.out.println("[" + mutantId + ", " + test.getName() + "]: pass");
                 return UNKILLED;
             }
         } else {
@@ -173,16 +125,6 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             }
         }
         return false;
-    }
-
-    private Result timeAnalyzer(TestMethod test, int mutant) {
-        Result result = null;
-        try {
-            result = TimeoutAnalyzer.runWithTimeout(new TestTask(test.getTestClass(), test, mutant), getTimeout(test), TimeUnit.MILLISECONDS);
-        } catch (Exception e) {
-            System.out.println(test.getName() + ", " + mutant + " timed out...");
-        }
-        return result;
     }
 
     private long getTimeout(TestMethod test) {

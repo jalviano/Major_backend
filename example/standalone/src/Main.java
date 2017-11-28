@@ -1,9 +1,8 @@
-import analysis.timeout.TimeoutThread;
 import output.DefaultKillMatrix;
 import analysis.DefaultMutationAnalyzer;
 import output.CSVFormatter;
 import prepass.DefaultPrepassAnalyzer;
-import utils.TestFinder;
+import prepass.TestFinder;
 import prepass.TestMethod;
 
 import java.io.IOException;
@@ -72,13 +71,6 @@ public class Main {
             System.out.println("Total time: " + (end - start) / 1000 + "s");
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
-        System.out.println("Covered mutants: ");
-        for (TestMethod key : coverage.keySet()) {
-            System.out.println(key.getName() + ": " + coverage.get(key).toString());
         }
     }
 }
