@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Added commons-lang directory for testing.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mutants.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/DeadEndDigestOutputStream.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/IsolatingClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/Outcome.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/TestRunnable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/TestRunner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/runners/WorkOrder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/timeout/TimeoutRunnable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/analysis/timeout/TimeoutThread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/TimeoutAnalyzer.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/timeout/TimeoutRunner.java" afterPath="$PROJECT_DIR$/src/analysis/TestRunner.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/TestTask.java" afterPath="$PROJECT_DIR$/src/analysis/TestTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/CSVKilledFormatter.java" afterPath="$PROJECT_DIR$/src/output/CSVKilledFormatter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -35,11 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+            <state relative-caret-position="375">
+              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -49,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#344#345#0" expanded="true" />
                 <element signature="e#376#377#0" expanded="true" />
@@ -62,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/analysis/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="10" column="71" lean-forward="true" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+              <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -657,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511888647104</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added commons-lang directory for testing.">
+      <created>1511894349528</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1511894349528</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1008,7 +1006,7 @@
     <entry file="file://$PROJECT_DIR$/src/analysis/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="10" column="71" lean-forward="true" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1016,7 +1014,7 @@
     <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#344#345#0" expanded="true" />
             <element signature="e#376#377#0" expanded="true" />
@@ -1046,18 +1044,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="375">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        <state relative-caret-position="120">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>
