@@ -4,6 +4,7 @@ import output.CSVFormatter;
 import prepass.DefaultPrepassAnalyzer;
 import prepass.TestFinder;
 import prepass.TestMethod;
+import utils.PipelineTimer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class Main {
     // Mutation score:              ------          ------          ------
 
     public static void main(String... args) {
-        long start = System.currentTimeMillis();
+        PipelineTimer timer = new PipelineTimer();
         Boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);
         int offset = Integer.parseInt(args[1]);
         int factor = Integer.parseInt(args[2]);
@@ -40,14 +41,12 @@ public class Main {
         try {
             System.out.println("Loading classes...");
             testClasses = TestFinder.loadClasses(testDirectories);
-            long loadTime = System.currentTimeMillis();
-            System.out.println("Time to load classes: " + (loadTime - start) / 1000 + "s");
+            timer.logTime("Time to load classes");
             // 1. PREPASS
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            long prepassTime = System.currentTimeMillis();
-            System.out.println("Time to run prepass: " + (prepassTime - loadTime) / 1000 + "s");
+            timer.logTime("Time to run prepass");
             // 2. MUTATION ANALYSIS
             System.out.println("Running mutation analysis...");
             DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath, offset, factor);
@@ -57,15 +56,13 @@ public class Main {
             } else {
                 matrix = analyzer.runSparseAnalysis();
             }
-            long analysisTime = System.currentTimeMillis();
-            System.out.println("Time to run analysis: " + (analysisTime - prepassTime) / 1000 + "s");
+            timer.logTime("Time to run analysis");
             // 3. RESULTS OUTPUT
             System.out.println("Formatting output...");
             CSVFormatter csvFormatter = new CSVFormatter();
             csvFormatter.drawOutput(matrix);
-            long end = System.currentTimeMillis();
-            System.out.println("Time to format output: " + (end - analysisTime) / 1000 + "s");
-            System.out.println("Total time: " + (end - start) / 1000 + "s");
+            timer.logTime("Time to format output");
+            timer.finalTime("Total time");
         } catch (IOException e) {
             e.printStackTrace();
         }
