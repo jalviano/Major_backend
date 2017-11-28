@@ -105,7 +105,7 @@ public class TriangleTest extends TestCase {
         assertEquals (triangle.Triangle.classify(7,3,3), INVALID);
    }
 
-   public void testForever() {
+   /*public void testForever() {
        triangle.Triangle.runForever();
-   }
+   }*/
 }

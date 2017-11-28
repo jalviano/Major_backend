@@ -53,6 +53,8 @@ public class TestFinder {
                 } else if (path.contains("Test.class")) {
                     String classname = getClassName(filepath);
                     String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
+                    System.out.println("CLASS NAME: " + classname);
+                    System.out.println("PACKAGE: " + packageBase);
                     try {
                         Class<?> cls = new URLClassLoader(new URL[] {
                                 new File(packageBase).toURI().toURL()

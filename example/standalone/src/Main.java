@@ -17,9 +17,6 @@ public class Main {
     // Why are some threads not being killed?
     // Are tests loaded never reloading underlying class?
 
-    // 1. Add ability for user to include formatter class file
-    // 2. Fix build.xml file so it can run analysis
-
     // Benchmark Report:            Standalone      Optimized       Ant
 
     // Time to load classes:        83"             ---             ---

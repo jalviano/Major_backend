@@ -33,11 +33,11 @@ public class Triangle {
 		return Type.INVALID;
 	}
 
-	public static void runForever() {
+	/*public static void runForever() {
 	    int i = 0;
 		while (i < 4) {
 			i += 1;
 			// System.out.println(Thread.currentThread().getName() + ": " + i);
 		}
-	}
+	}*/
 }
