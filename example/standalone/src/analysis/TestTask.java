@@ -12,10 +12,16 @@ public class TestTask implements Callable<Result>{
 
     private TestMethod test;
 
+    /**
+     * Constructor for task to run JUnit test.
+     */
     TestTask(TestMethod test) {
         this.test = test;
     }
 
+    /**
+     * Callable method to run JUnit test and return result.
+     */
     @Override
     public Result call() throws TimeoutException, InterruptedException {
         Request request = Request.method(test.getTestClass(), test.getName());

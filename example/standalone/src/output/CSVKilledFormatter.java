@@ -1,5 +1,6 @@
 package output;
 
+import utils.CSVUtils;
 import utils.Outcome;
 
 import java.io.FileWriter;

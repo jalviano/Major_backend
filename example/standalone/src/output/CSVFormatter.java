@@ -1,5 +1,6 @@
 package output;
 
+import utils.CSVUtils;
 import utils.Outcome;
 
 import java.io.FileWriter;
@@ -14,6 +15,10 @@ public class CSVFormatter implements Formatter {
 
     }
 
+    /**
+     * Writes new CSV file containing kill matrix data. Test outcomes are represented in CSV by integer id values.
+     * @param matrix kill matrix data to be written to CSV file
+     */
     public void drawOutput(DefaultKillMatrix matrix) {
         String csvFile = "./killMatrix.csv";
         try {

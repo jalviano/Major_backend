@@ -30,6 +30,9 @@ public class Main {
     // Mutants covered:             ----            ----            ----
     // Mutation score:              ------          ------          ------
 
+    /**
+     * Builds backend pipeline to run mutation analysis.
+     */
     public static void main(String... args) {
         PipelineTimer timer = new PipelineTimer();
         Boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);

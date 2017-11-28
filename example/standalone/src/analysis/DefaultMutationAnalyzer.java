@@ -26,6 +26,13 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
     private int offset = 0;
     private int factor = 1;
 
+    /**
+     * Default mutation analyzer constructor to run mutation analysis phase.
+     * @param coverage map of mutant coverage results for each test method in test suite
+     * @param logFilepath file path to mutants.log file
+     * @param offset value by which test method timeout measurement is offset
+     * @param factor value by which test method timeout measurement is multiplied
+     */
     public DefaultMutationAnalyzer(HashMap<TestMethod, ArrayList<Integer>> coverage,
                                    String logFilepath, int offset, int factor) {
         this.coverage = coverage;
@@ -34,6 +41,10 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         this.factor = factor;
     }
 
+    /**
+     * Runs mutation analysis and outputs full kill matrix. Runs each test method once for each mutant covered by test.
+     * @return full kill matrix of test results
+     */
     public DefaultKillMatrix runFullAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
@@ -54,6 +65,11 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return matrix;
     }
 
+    /**
+     * Runs mutation analysis and outputs sparse kill matrix. For each mutant, runs each test that covers that mutant
+     * until mutant is killed, then disables mutant.
+     * @return sparse kill matrix of test results
+     */
     public DefaultKillMatrix runSparseAnalysis() {
         int killedCount = 0;
         int mutantNumber = totalMutantNumber();
@@ -78,6 +94,12 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return matrix;
     }
 
+    /**
+     * Runs JUnit for provided test method and mutant if mutant is covered by test.
+     * @param test test method to be run through JUnit
+     * @param mutantId id of mutant enabled for test run
+     * @return outcome of JUnit test
+     */
     private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
             Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
@@ -101,6 +123,9 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         }
     }
 
+    /**
+     * Calculates total number of mutants in mutants.log file.
+     */
     private int totalMutantNumber() {
         int mutantNumber = 0;
         try {
@@ -117,6 +142,11 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return mutantNumber;
     }
 
+    /**
+     * Checks if JUnit test failure is an assertion error (true) or general exception (false).
+     * @param result JUnit test result to be checked
+     * @return true if failure is an assertion error, else false
+     */
     private boolean isAssertionError(Result result) {
         List<Failure> failures = result.getFailures();
         for (Failure failure : failures) {
@@ -127,6 +157,10 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return false;
     }
 
+    /**
+     * Calculates time provided test method should be allowed to run before terminating JUnit test.
+     * @return timeout value for test method
+     */
     private long getTimeout(TestMethod test) {
         long execTime = test.getExecTime();
         return offset * 1000 + execTime * factor;

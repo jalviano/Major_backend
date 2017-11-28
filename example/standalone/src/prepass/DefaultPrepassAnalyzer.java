@@ -10,10 +10,19 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
 
     private List<Class<?>> testClasses;
 
+    /**
+     * Default prepass analyzer constructor to run prepass phase of mutation analysis.
+     * @param testClasses suite of test classes to be used for analysis
+     */
     public DefaultPrepassAnalyzer(List<Class<?>> testClasses) {
         this.testClasses = testClasses;
     }
 
+    /**
+     * Method that runs prepass phase of mutation analysis. Measures execution time of test methods for each test
+     * class and retrieves mutant coverage information.
+     * @return map of mutant coverage results for each test method
+     */
     public HashMap<TestMethod, ArrayList<Integer>> runPrepass() {
         HashMap<TestMethod, ArrayList<Integer>> coverage = new HashMap<>();
         HashSet<Integer> totalCovered = new HashSet<>();

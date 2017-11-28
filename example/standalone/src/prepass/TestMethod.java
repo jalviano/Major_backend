@@ -7,25 +7,43 @@ public class TestMethod implements Comparable<TestMethod> {
     private static final char SEPARATOR = '#';
     private long execTime;
 
-    public TestMethod(Class<?> testClass, String name) {
+    /**
+     * Test suite test method constructor.
+     * @param testClass parent class of test method
+     * @param name test method name
+     */
+    TestMethod(Class<?> testClass, String name) {
         this.testClass = testClass;
         this.name = name;
     }
 
+    /**
+     * Retrieves test method parent class.
+     */
     public Class<?> getTestClass() {
         return this.testClass;
     }
 
+    /**
+     * Retrieves test method name.
+     */
     public String getName() {
         return this.name;
     }
 
-    public void setExecTime(long execTime) {
-        this.execTime = execTime;
-    }
-
+    /**
+     * Retrieves test method execution time
+     */
     public long getExecTime() {
         return execTime;
+    }
+
+    /**
+     * Method to set initial execution time of test method during prepass phase with all mutants disabled.
+     * @param execTime initial test method execution time
+     */
+    void setExecTime(long execTime) {
+        this.execTime = execTime;
     }
 
     @Override

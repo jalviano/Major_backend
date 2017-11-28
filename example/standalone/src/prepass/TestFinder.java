@@ -14,6 +14,11 @@ import java.util.*;
 
 public class TestFinder {
 
+    /**
+     * Loads test suite classes in provided directory.
+     * @param testDirectories array of directories in which to search for test classes
+     * @return list of test classes
+     */
     public static List<Class<?>> loadClasses(String[] testDirectories) throws IOException {
         List<Class<?>> classes = new ArrayList<>();
         for (String directory : testDirectories) {
@@ -25,6 +30,11 @@ public class TestFinder {
         return classes;
     }
 
+    /**
+     * Loads test methods for a given class in the test suite.
+     * @param cls test suite class from which methods are retrieved
+     * @return collection of test methods for class
+     */
     static Collection<TestMethod> getTestMethods(Class<?> cls) {
         Vector<TestMethod> tests = new Vector<>();
         for (Description test : Request.aClass(cls).getRunner().getDescription().getChildren()) {
@@ -40,6 +50,13 @@ public class TestFinder {
         return tests;
     }
 
+    /**
+     * Finds full file paths for all test classes in provided root directory. Recursively searches through all sub
+     * folders in directory to find all classes in the test suite.
+     * @param directory current directory file path
+     * @param paths all possible sub folders in current directory
+     * @param classes cumulative list of classes found in root directory and its sub folders
+     */
     private static void getClassPaths(String directory, String[] paths, List<Class<?>> classes) throws IOException {
         boolean hasSubdirectory = true;
         while (hasSubdirectory) {
@@ -74,6 +91,11 @@ public class TestFinder {
         }
     }
 
+    /**
+     * Gets full name (including package) for test class
+     * @param pathToClassFile file path for test class to be named
+     * @return full name of test class
+     */
     private static String getClassName(String pathToClassFile) throws IOException {
         ProcessBuilder builder = new ProcessBuilder("javap", pathToClassFile);
         Process process = builder.start();
