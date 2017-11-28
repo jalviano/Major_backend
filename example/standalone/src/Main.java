@@ -1,3 +1,4 @@
+import analysis.timeout.TimeoutThread;
 import output.DefaultKillMatrix;
 import analysis.DefaultMutationAnalyzer;
 import output.CSVFormatter;
@@ -26,9 +27,9 @@ public class Main {
     // Time to run prepass:         77"             ---             ---
     // Time to run analysis:        ----            ----            ----
     // Time to format output:       --              --              --
-    // Total time:                  -----           -----           -----
-    // Test number:                 ---             ---             ---
-    // Mutant number:               32,681          ------          32,681
+    // Total time:                  -----           -----           ~4hrs
+    // Test number:                 ---             ---             3397
+    // Mutant number:               32,681          ------          31,322
     // Mutants covered:             ----            ----            ----
     // Mutation score:              ------          ------          ------
 

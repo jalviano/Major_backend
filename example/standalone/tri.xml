@@ -8,9 +8,9 @@
 
     <property name="outputFullKillMatrix" value="true"/>
     <property name="offset" value="1"/>
-    <property name="factor" value="4"/>
+    <property name="factor" value="2"/>
     <property name="logFilePath" value="mutants.log"/>
-    <property name="testDirectory" value="bin/triangle/test/"/>
+    <property name="testDirectory" value="bin/triangle/test"/>
 
     <!-- Target to clean up -->
     <target name="clean" description="Clean">

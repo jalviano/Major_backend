@@ -86,7 +86,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
     // Default analyzeTest() method -- main thread does not exit if tests timeout
     private Outcome analyzeTestDefault(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = timeAnalyzer(test);
+            Result result = timeAnalyzer(test, mutantId);
             if (result == null) {
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
@@ -106,16 +106,20 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
     // Creates new thread when running tests and uses Thread.stop() to kill threads that timeout -- deprecated method
     private Outcome analyzeTestStop(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = TimeoutRunner.runTest(test, getTimeout(test));
+            Result result = TimeoutRunner.runTest(test, getTimeout(test), mutantId);
             if (result == null) {
+                System.out.println("[" + mutantId + ", " + test.getName() + "]: timed out...");
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
                 if (isAssertionError(result)) {
+                    System.out.println("[" + mutantId + ", " + test.getName() + "]: failed...");
                     return ASSERTION_ERROR;
                 } else {
+                    System.out.println("[" + mutantId + ", " + test.getName() + "]: crashed...");
                     return GENERAL_EXCEPTION;
                 }
             } else {
+                System.out.println("[" + mutantId + ", " + test.getName() + "]: passed...");
                 return UNKILLED;
             }
         } else {
@@ -171,12 +175,12 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         return false;
     }
 
-    private Result timeAnalyzer(TestMethod test) {
+    private Result timeAnalyzer(TestMethod test, int mutant) {
         Result result = null;
         try {
-            result = TimeoutAnalyzer.runWithTimeout(new TestTask(test.getTestClass(), test), getTimeout(test), TimeUnit.MILLISECONDS);
+            result = TimeoutAnalyzer.runWithTimeout(new TestTask(test.getTestClass(), test, mutant), getTimeout(test), TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            System.out.println(test.getName() + " timed out...");
+            System.out.println(test.getName() + ", " + mutant + " timed out...");
         }
         return result;
     }

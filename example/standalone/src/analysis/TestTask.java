@@ -14,19 +14,42 @@ public class TestTask implements Callable<Result>{
 
     private Class<?> testClass;
     private TestMethod test;
+    private int mutant;
 
     TestTask(Class<?> testClass, TestMethod test) {
         this.testClass = testClass;
         this.test = test;
     }
 
+    public TestTask(Class<?> testClass, TestMethod test, int mutant) {
+        this.testClass = testClass;
+        this.test = test;
+        this.mutant = mutant;
+    }
+
     @Override
-    public Result call() throws Exception {
+    public Result call() throws TimeoutException, InterruptedException {
+        //System.out.println(test.getName() + "," + mutant);
+        long start = System.currentTimeMillis();
         JUnitCore jUnitCore = new JUnitCore();
         Request request = Request.method(testClass, test.getName());
         Result result = jUnitCore.run(request);
+        /*if (Thread.interrupted()) {
+            System.out.println(
+                    test.getName() +
+                    " / " +
+                    mutant +
+                    " -- TIME: " +
+                    Long.toString(System.currentTimeMillis() - start) +
+                    ", TIMEOUT: " +
+                    Long.toString(getTimeout(test))
+            );
+        }*/
         return result;
-        //Thread.sleep(10000);
-        //return null;
+    }
+
+    private long getTimeout(TestMethod test) {
+        long execTime = test.getExecTime();
+        return 1000 + execTime * 4;
     }
 }

@@ -11,6 +11,7 @@ import static utils.Outcome.*;
 public class CSVFormatter implements Formatter {
 
     public CSVFormatter() {
+
     }
 
     public void drawOutput(DefaultKillMatrix matrix) {

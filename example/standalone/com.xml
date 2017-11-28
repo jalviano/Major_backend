@@ -10,7 +10,7 @@
     <property name="offset" value="1"/>
     <property name="factor" value="2"/>
     <property name="logFilePath" value="mutants.log"/>
-    <property name="testDirectory" value="bin/triangle/test/"/>
+    <property name="testDirectory" value="bin/org/apache/commons/lang3"/>
 
     <!-- Target to clean up -->
     <target name="clean" description="Clean">
@@ -81,6 +81,8 @@
             <classpath>
                 <pathelement location="${config}"/>
                 <pathelement location="${junit}"/>
+                <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
+                <pathelement location="../../lib/easymock-3.5.jar"/>
             </classpath>
         </javac>
     </target>
@@ -114,13 +116,14 @@
                resultFile="results.csv"
                killDetailsFile="killed.csv">
             <classpath>
-                <pathelement location="bin"/>
                 <pathelement location="${junit}"/>
                 <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
                 <pathelement location="../../lib/easymock-3.5.jar"/>
+                <pathelement location="bin"/>
             </classpath>
             <batchtest fork="false">
-                <fileset dir="org/apache/commons/lang3">
+                <!--<fileset dir="dir/test">-->
+                <fileset dir="dir/test/java">
                     <include name="**/*Test*.java"/>
                 </fileset>
             </batchtest>
