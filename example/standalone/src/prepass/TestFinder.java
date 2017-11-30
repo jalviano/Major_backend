@@ -70,8 +70,6 @@ public class TestFinder {
                 } else if (path.contains("Test.class")) {
                     String classname = getClassName(filepath);
                     String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
-                    System.out.println("CLASS NAME: " + classname);
-                    System.out.println("PACKAGE: " + packageBase);
                     try {
                         Class<?> cls = new URLClassLoader(new URL[] {
                                 new File(packageBase).toURI().toURL()
@@ -84,6 +82,8 @@ public class TestFinder {
                     } catch (Exception e) {
                         System.out.println("Exception: " + filepath);
                     }
+                    noSubDirectory = true;
+                } else {
                     noSubDirectory = true;
                 }
             }

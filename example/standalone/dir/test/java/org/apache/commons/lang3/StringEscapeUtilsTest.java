@@ -583,23 +583,6 @@ public class StringEscapeUtilsTest {
     }
 
     /**
-     * Tests https://issues.apache.org/jira/browse/LANG-708
-     *
-     * @throws IOException
-     *             if an I/O error occurs
-     */
-    @Test
-    public void testLang708() throws IOException {
-        final byte[] inputBytes = Files.readAllBytes(Paths.get("src/test/resources/lang-708-input.txt"));
-        final String input = new String(inputBytes, StandardCharsets.UTF_8);
-        final String escaped = StringEscapeUtils.escapeEcmaScript(input);
-        // just the end:
-        assertTrue(escaped, escaped.endsWith("}]"));
-        // a little more:
-        assertTrue(escaped, escaped.endsWith("\"valueCode\\\":\\\"\\\"}]"));
-    }
-
-    /**
      * Tests https://issues.apache.org/jira/browse/LANG-720
      */
     @Test

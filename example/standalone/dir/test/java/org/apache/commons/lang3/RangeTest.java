@@ -385,10 +385,4 @@ public class RangeTest {
         intRange.intersectionWith(Range.between(0, 9));
     }
 
-    // -----------------------------------------------------------------------
-    @Test
-    public void testSerializing() {
-        SerializationUtils.clone(intRange);
-    }
-
 }

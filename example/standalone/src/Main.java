@@ -14,21 +14,24 @@ import java.util.List;
 
 public class Main {
 
-    // Check number of timeouts
-    // Why are some threads not being killed?
     // Are tests loaded never reloading underlying class?
 
     // Benchmark Report:            Standalone      Optimized       Ant
 
-    // Time to load classes:        83"             ---             ---
-    // Time to run prepass:         77"             ---             ---
-    // Time to run analysis:        ----            ----            ----
-    // Time to format output:       --              --              --
-    // Total time:                  -----           -----           ~4hrs
-    // Test number:                 ---             ---             3397
-    // Mutant number:               32,681          ------          31,322
-    // Mutants covered:             ----            ----            ----
-    // Mutation score:              ------          ------          ------
+    // Time to load classes:        17"             ---             ---
+    // Time to run prepass:         4"              ---             37"
+    // Time to run analysis:        21'25"          ----            54'06"
+    // Time to format output:       2"              --              --
+    // Total time:                  21'48"          -----           54'44"
+    // Mutant number:               24,607          ------          24,607
+    // Mutants covered:             16,332          ----            16,332
+    // Mutation score:              47.91%          ------          49.29% / 74.26%
+
+    // Problematic unit test: ThreadUtilsTest.testComplexThreadGroups()
+    // [thread for testThreadsNullPredicate, 20164]
+    // [thread for testThreads, 20227]
+    // [thread for testAtLeastOneThreadGroupsExists, 20255]
+    // [thread for testAtLeastOneThreadGroupsExists, 20262]
 
     /**
      * Builds backend pipeline to run mutation analysis.

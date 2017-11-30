@@ -112,6 +112,8 @@
                showoutput="false"
                mutationAnalysis="true"
                sort="sort_methods"
+               timeoutOffset="1000"
+               timeoutFactor="2"
                exportKillMap="true"
                resultFile="results.csv"
                killDetailsFile="killed.csv">

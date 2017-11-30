@@ -430,17 +430,6 @@ public class CharSetTest  {
 
     //-----------------------------------------------------------------------
     @Test
-    public void testSerialization() {
-        CharSet set = CharSet.getInstance("a");
-        assertEquals(set, SerializationUtils.clone(set));
-        set = CharSet.getInstance("a-e");
-        assertEquals(set, SerializationUtils.clone(set));
-        set = CharSet.getInstance("be-f^a-z");
-        assertEquals(set, SerializationUtils.clone(set));
-    }
-
-    //-----------------------------------------------------------------------
-    @Test
     public void testStatics() {
         CharRange[] array;
 
