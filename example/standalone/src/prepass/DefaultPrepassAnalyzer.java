@@ -24,6 +24,9 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
      * @return map of mutant coverage results for each test method
      */
     public HashMap<TestMethod, ArrayList<Integer>> runPrepass() {
+
+        // Test classes are loaded before prepass--coverage information is inaccurate for mutated static variables
+
         HashMap<TestMethod, ArrayList<Integer>> coverage = new HashMap<>();
         HashSet<Integer> totalCovered = new HashSet<>();
         for (Class<?> testClass : testClasses) {

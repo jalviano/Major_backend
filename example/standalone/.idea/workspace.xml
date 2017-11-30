@@ -2,254 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArchUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/BooleanUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ClassUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/EnumUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/JavaVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ObjectUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/StringEscapeUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/SystemUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/arch/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/Diff.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/DiffBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/DiffResult.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/Diffable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/MultilineRecursiveToStringStyle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/RecursiveToStringStyle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/ReflectionDiffBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/StandardToStringStyle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/builder/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/AbstractCircuitBreaker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/AtomicInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/BackgroundInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/BasicThreadFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/CallableBackgroundInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/CircuitBreaker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/CircuitBreakingException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/Computable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ConcurrentException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ConcurrentInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ConcurrentRuntimeException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ConcurrentUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ConstantInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreaker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/LazyInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/Memoizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/ThresholdCircuitBreaker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/TimedSemaphore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/concurrent/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/event/EventListenerSupport.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/event/EventUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/event/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/ContextedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/ContextedRuntimeException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/DefaultExceptionContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/ExceptionContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/exception/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/math/Fraction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/math/IEEE754rUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/math/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableBoolean.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableByte.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableDouble.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableFloat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableLong.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/MutableShort.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/mutable/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/ConstructorUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/FieldUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/InheritanceUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/MemberUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/MethodUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/TypeLiteral.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/TypeUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/Typed.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/reflect/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/CompositeFormat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/FormatFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/FormattableUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/StrLookup.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/StrSubstitutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/text/translate/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/DateFormatUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/DateParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/DatePrinter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/DateUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/FastDateFormat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/FastDateParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/FastDatePrinter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/FastTimeZone.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/FormatCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/GmtTimeZone.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/StopWatch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/TimeZones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/time/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/tuple/ImmutableTriple.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/tuple/MutablePair.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/tuple/MutableTriple.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/tuple/Triple.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/tuple/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/AnnotationUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ArchUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ArrayUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/BooleanUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ClassUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/EnumUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/JavaVersionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ObjectUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsContainsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/SystemUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/CompareToBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/DefaultToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/DiffBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/DiffResultTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/DiffTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/HashCodeBuilderAndEqualsBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/MultiLineToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/MultilineRecursiveToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/NoClassNameToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/NoFieldNamesToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/RecursiveToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeNullValuesTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeWithAnnotationTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderMutateInspectConcurrencyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ShortPrefixToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/SimpleToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/StandardToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/builder/ToStringStyleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/AbstractConcurrentInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/AtomicInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/BackgroundInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/CallableBackgroundInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/CircuitBreakingExceptionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/ConcurrentUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/ConstantInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreakerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/LazyInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/MemoizerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/ThresholdCircuitBreakerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/event/EventListenerSupportTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/event/EventUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/AbstractExceptionContextTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/AbstractExceptionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/CloneFailedExceptionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/ContextedExceptionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/ContextedRuntimeExceptionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/DefaultExceptionContextTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/exception/ExceptionUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/math/FractionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/math/IEEE754rUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableBooleanTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableByteTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableDoubleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableFloatTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableIntTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableLongTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableObjectTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/mutable/MutableShortTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/FieldUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/InheritanceUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/TypeLiteralTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Ambig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Annotated.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/AnotherChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/AnotherParent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Bar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Foo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/GenericConsumer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/GenericParent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/GenericTypeHolder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Grandchild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/Parent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/PrivatelyShadowedChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/PublicChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/PubliclyShadowedChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/StaticContainer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/StaticContainerChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/reflect/testbed/StringParameterizedChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/test/NotVisibleExceptionFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/test/SystemDefaults.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/test/SystemDefaultsSwitch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/test/SystemDefaultsSwitchTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/CompositeFormatTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/ExtendedMessageFormatTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/FormattableUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrBuilderAppendInsertTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrBuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrLookupTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrMatcherTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrSubstitutorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/StrTokenizerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/WordUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/EntityArraysTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/LookupTranslatorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/NumericEntityEscaperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/OctalUnescaperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/UnicodeEscaperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/UnicodeUnescaperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/text/translate/UnicodeUnpairedSurrogateRemoverTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/DateFormatUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/DateUtilsFragmentTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/DateUtilsRoundingTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/DateUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/DurationFormatUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateFormat_ParserTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateFormat_PrinterTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateParserSDFTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateParserTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateParser_MoreOrLessTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastDatePrinterTimeZonesTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/FastTimeZoneTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/GmtTimeZoneTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/StopWatchTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/time/WeekYearTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/ImmutablePairTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/ImmutableTripleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/MutablePairTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/MutableTripleTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/PairTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/tuple/TripleTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com.sh" afterPath="$PROJECT_DIR$/com.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com.xml" afterPath="$PROJECT_DIR$/com.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharRangeTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharRangeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharSetTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharSetTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/RangeTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/RangeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/SerializationUtilsTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/SerializationUtilsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triangle/src/triangle/Triangle.java" afterPath="$PROJECT_DIR$/triangle/src/triangle/Triangle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java" afterPath="$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -265,8 +23,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="705">
+              <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -275,20 +33,53 @@
       <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="128" column="11" lean-forward="false" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
+            <state relative-caret-position="420">
+              <caret line="121" column="25" lean-forward="false" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadUtilsTest.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ThreadUtilsTest.class">
+      <file leaf-file-name="DefaultPrepassAnalyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="300" column="36" lean-forward="true" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
+            <state relative-caret-position="210">
+              <caret line="27" column="97" lean-forward="false" selection-start-line="27" selection-start-column="97" selection-end-line="27" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestFinder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Triangle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/triangle/src/triangle/Triangle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding>
-                <element signature="e#0#15924#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1066#1067#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TriangleTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -323,6 +114,13 @@
       <find>testNull</find>
       <find>testSerial</find>
       <find>testLang70</find>
+      <find>941</find>
+      <find>testAdd</find>
+      <find>isEmpty</find>
+      <find>add(</find>
+      <find>getLength</find>
+      <find>add</find>
+      <find>copyArrayGrow1</find>
     </findStrings>
     <replaceStrings>
       <replace>bin</replace>
@@ -366,7 +164,6 @@
         <option value="$PROJECT_DIR$/src/analysis/Outcome.java" />
         <option value="$PROJECT_DIR$/src/utils/Timer.java" />
         <option value="$PROJECT_DIR$/src/prepass/TestMethod.java" />
-        <option value="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestRunner.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestTask.java" />
         <option value="$PROJECT_DIR$/src/utils/Outcome.java" />
@@ -377,8 +174,6 @@
         <option value="$PROJECT_DIR$/src/output/CSVFormatter.java" />
         <option value="$PROJECT_DIR$/src/output/DefaultKillMatrix.java" />
         <option value="$PROJECT_DIR$/mutants.log" />
-        <option value="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
-        <option value="$PROJECT_DIR$/tri.sh" />
         <option value="$PROJECT_DIR$/src/prepass/TestFinder.java" />
         <option value="$PROJECT_DIR$/com.xml" />
         <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharRangeTest.java" />
@@ -388,15 +183,19 @@
         <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java" />
         <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/SerializationUtilsTest.java" />
         <option value="$PROJECT_DIR$/com.sh" />
+        <option value="$PROJECT_DIR$/tri.sh" />
+        <option value="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/triangle/src/triangle/Triangle.java" />
         <option value="$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="709" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="731" />
     <option name="height" value="814" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -431,41 +230,6 @@
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="apache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="apache" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="apache" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-              <item name="lang3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -491,45 +255,6 @@
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1023,7 +748,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511906024215</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated benchmark data.">
+      <created>1512047739291</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1512047739292</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1042,7 +774,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52873564" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20529328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20457797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32327586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1057,7 +790,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32327586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1080,7 +812,8 @@
     <MESSAGE value="Updated build files." />
     <MESSAGE value="Added pipeline timer." />
     <MESSAGE value="Added method documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method documentation" />
+    <MESSAGE value="Updated benchmark data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated benchmark data." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1093,13 +826,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/analysis/runners/Outcome.java" />
-    <entry file="file://$PROJECT_DIR$/src/analysis/runners/TestRunner.java" />
-    <entry file="file://$PROJECT_DIR$/src/analysis/runners/TestRunnable.java" />
-    <entry file="file://$PROJECT_DIR$/src/analysis/MyRunner.java" />
-    <entry file="file://$PROJECT_DIR$/bin/triangle/Triangle.class" />
-    <entry file="file://$PROJECT_DIR$/output.txt" />
-    <entry file="file://$PROJECT_DIR$/killMap.csv" />
     <entry file="file://$PROJECT_DIR$/src/analysis/runners/IsolatingClassLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TimeoutThread.java" />
     <entry file="file://$PROJECT_DIR$/src/analysis/timeout/TestBuilder.java" />
@@ -1153,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/PrepassAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Formatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1169,36 +887,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/CSVFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="method#CSVFormatter#0;class#CSVFormatter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/DefaultKillMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1215,14 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mutants.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229054">
-          <caret line="157" column="56" lean-forward="false" selection-start-line="157" selection-start-column="56" selection-end-line="157" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1267,14 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/killMatrix.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10757">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/CSVKilledFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1282,38 +958,6 @@
           <folding>
             <element signature="method#CSVKilledFormatter#0;class#CSVKilledFormatter#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/CSVUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Outcome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="87" column="17" lean-forward="false" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,7 +977,7 @@
         <state relative-caret-position="397">
           <caret line="387" column="0" lean-forward="false" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14878#0" expanded="true" />
+            <element signature="e#0#14878#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1343,7 +987,7 @@
         <state relative-caret-position="162">
           <caret line="429" column="0" lean-forward="false" selection-start-line="429" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18491#0" expanded="true" />
+            <element signature="e#0#18491#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1353,7 +997,7 @@
         <state relative-caret-position="176">
           <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26340#0" expanded="true" />
+            <element signature="e#0#26340#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1363,7 +1007,7 @@
         <state relative-caret-position="502">
           <caret line="386" column="0" lean-forward="true" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13963#0" expanded="true" />
+            <element signature="e#0#13963#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1373,7 +1017,7 @@
         <state relative-caret-position="162">
           <caret line="583" column="0" lean-forward="true" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29367#0" expanded="true" />
+            <element signature="e#0#29367#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1383,32 +1027,8 @@
         <state relative-caret-position="327">
           <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5233#0" expanded="true" />
+            <element signature="e#0#5233#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/triangle/src/triangle/Triangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tri.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,28 +1040,206 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/src/prepass/PrepassAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="128" column="11" lean-forward="false" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
+        <state relative-caret-position="90">
+          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ThreadUtilsTest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="300" column="36" lean-forward="true" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="372" column="0" lean-forward="true" selection-start-line="372" selection-start-column="0" selection-end-line="372" selection-end-column="0" />
           <folding>
             <element signature="e#0#15924#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/CSVUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Outcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ArchUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#5382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ArrayUtilsAddTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#28851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/output/CSVFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="method#CSVFormatter#0;class#CSVFormatter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ArrayUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="18837" column="12" lean-forward="false" selection-start-line="18837" selection-start-column="12" selection-end-line="18837" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/triangle/Triangle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7868">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ArrayUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="157" column="21" lean-forward="false" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#187105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="5600" column="5" lean-forward="false" selection-start-line="5600" selection-start-column="5" selection-end-line="5600" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#345412#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutants.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="151" column="22" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ArrayUtilsAddTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#29867#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tri.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/killMatrix.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="10" column="200" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triangle/src/triangle/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="121" column="25" lean-forward="false" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="27" column="97" lean-forward="false" selection-start-line="27" selection-start-column="97" selection-end-line="27" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="705">
+          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
           <folding />
         </state>
       </provider>

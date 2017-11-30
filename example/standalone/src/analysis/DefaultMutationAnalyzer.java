@@ -104,18 +104,18 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         if (coverage.get(test).contains(mutantId)) {
             Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
             if (result == null) {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
+                //System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
                 if (isAssertionError(result)) {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: fail");
+                    //System.out.println("[" + mutantId + ", " + test.getName() + "]: fail");
                     return ASSERTION_ERROR;
                 } else {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: crash");
+                    //System.out.println("[" + mutantId + ", " + test.getName() + "]: crash");
                     return GENERAL_EXCEPTION;
                 }
             } else {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: pass");
+                //System.out.println("[" + mutantId + ", " + test.getName() + "]: pass");
                 return UNKILLED;
             }
         } else {

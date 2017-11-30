@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Main {
 
+    // Optimization to order tests. Should not run if tests are not independent.
     // Are tests loaded never reloading underlying class?
 
     // Benchmark Report:            Standalone      Optimized       Ant
@@ -52,6 +53,7 @@ public class Main {
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
+            printCoverage(coverage);
             timer.logTime("Time to run prepass");
             // 2. MUTATION ANALYSIS
             System.out.println("Running mutation analysis...");
@@ -71,6 +73,13 @@ public class Main {
             timer.finalTime("Total time");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
+        System.out.println("Covered mutants: ");
+        for (TestMethod key : coverage.keySet()) {
+            System.out.println(key.getName() + ": " + coverage.get(key).toString());
         }
     }
 }
