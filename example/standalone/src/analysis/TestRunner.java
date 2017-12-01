@@ -16,13 +16,25 @@ class TestRunner {
      */
     static Result runTest(final TestMethod test, long timeout, int mutantId) {
         FutureTask<Result> task = new FutureTask<>(new TestTask(test));
-        Thread thread = new Thread(task, "[thread for " + test.getName() + ", " + mutantId + "]");
+        ThreadGroup group = new ThreadGroup("[thread group for " + test.getName() + ", " + mutantId + "]");
+        Thread thread = new Thread(group, task, "[thread for " + test.getName() + ", " + mutantId + "]");
         thread.start();
         try {
             return task.get(timeout, TimeUnit.MILLISECONDS);
         } catch (TimeoutException | ExecutionException | InterruptedException e) {
+            killThreadGroup(group);
             thread.stop();
             return null;
+        }
+    }
+
+    /**
+     * Iterates over all threads in provided group and interrupts each thread.
+     */
+    private static void killThreadGroup(ThreadGroup group) {
+        Thread[] activeThreads = new Thread[group.activeCount()];
+        for (int i = 0; i < group.enumerate(activeThreads); ++i) {
+            activeThreads[i].interrupt();
         }
     }
 }

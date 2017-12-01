@@ -7,6 +7,7 @@
     <property name="junit" value="../../lib/junit-4.11.jar"/>
 
     <property name="outputFullKillMatrix" value="true"/>
+    <property name="sortOptimization" value="true"/>
     <property name="offset" value="1"/>
     <property name="factor" value="2"/>
     <property name="logFilePath" value="mutants.log"/>
@@ -91,6 +92,7 @@
         <echo message="Running mutation analysis backend..."/>
         <java classname="Main">
             <arg value="${outputFullKillMatrix}"/>
+            <arg value="${sortOptimization}"/>
             <arg value="${offset}"/>
             <arg value="${factor}"/>
             <arg value="${logFilePath}"/>
@@ -124,7 +126,6 @@
                 <pathelement location="bin"/>
             </classpath>
             <batchtest fork="false">
-                <!--<fileset dir="dir/test">-->
                 <fileset dir="dir/test/java">
                     <include name="**/*Test*.java"/>
                 </fileset>

@@ -35,7 +35,7 @@ public class Triangle {
 		return Type.INVALID;
 	}
 
-	public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
+	/*public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
     public static Object[] nullToEmpty(final Object[] array) {
 		if (isEmpty(array)) {
@@ -71,7 +71,7 @@ public class Triangle {
 		return Array.newInstance(newArrayComponentType, 1);
 	}
 
-	/*public static void runForever() {
+	public static void runForever() {
 	    int i = 0;
 		while (i < 4) {
 			i += 1;

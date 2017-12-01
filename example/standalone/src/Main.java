@@ -1,3 +1,4 @@
+import optimization.DefaultOptimizer;
 import output.DefaultKillMatrix;
 import analysis.DefaultMutationAnalyzer;
 import output.CSVFormatter;
@@ -7,19 +8,16 @@ import prepass.TestMethod;
 import utils.PipelineTimer;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     // Benchmark Report:            Standalone      Fixed           Ant
 
-    // Time to load classes:        17"             ---             ---
+    // Time to load classes:        17"             22"             ---
     // Time to run prepass:         4"              ---             37"
     // Time to run analysis:        21'25"          51'44"          54'06"
-    // Time to format output:       2"              --              --
+    // Time to format output:       2"              2"              --
     // Total time:                  21'48"          52'31"          54'44"
     // Mutant number:               24,607          ------          24,607
     // Mutants covered:             16,332          ----            16,332
@@ -30,11 +28,12 @@ public class Main {
      */
     public static void main(String... args) {
         PipelineTimer timer = new PipelineTimer();
-        Boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);
-        int offset = Integer.parseInt(args[1]);
-        int factor = Integer.parseInt(args[2]);
-        String logFilepath = args[3];
-        String[] testDirectories = Arrays.copyOfRange(args, 4, args.length);
+        boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);
+        boolean sortOptimization = Boolean.parseBoolean(args[1]);
+        int offset = Integer.parseInt(args[2]);
+        int factor = Integer.parseInt(args[3]);
+        String logFilepath = args[4];
+        String[] testDirectories = Arrays.copyOfRange(args, 5, args.length);
         List<Class<?>> testClasses;
         try {
             System.out.println("Loading classes...");
@@ -45,9 +44,12 @@ public class Main {
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
             timer.logTime("Time to run prepass");
-            // 2. MUTATION ANALYSIS
+            // 2. OPTIMIZATION
+            DefaultOptimizer optimizer = new DefaultOptimizer(coverage, sortOptimization);
+            Map<TestMethod, ArrayList<Integer>> optimizedCoverage = optimizer.runOptimizations();
+            // 3. MUTATION ANALYSIS
             System.out.println("Running mutation analysis...");
-            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath, offset, factor);
+            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(optimizedCoverage, logFilepath, offset, factor);
             DefaultKillMatrix matrix;
             if (outputFullKillMatrix) {
                 matrix = analyzer.runFullAnalysis();
@@ -55,7 +57,7 @@ public class Main {
                 matrix = analyzer.runSparseAnalysis();
             }
             timer.logTime("Time to run analysis");
-            // 3. RESULTS OUTPUT
+            // 4. RESULTS OUTPUT
             System.out.println("Formatting output...");
             CSVFormatter csvFormatter = new CSVFormatter();
             csvFormatter.drawOutput(matrix);
@@ -64,5 +66,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.exit(0);
     }
 }

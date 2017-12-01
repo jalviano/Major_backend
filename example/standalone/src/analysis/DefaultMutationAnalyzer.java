@@ -7,8 +7,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.runner.Result;
 
@@ -21,7 +21,7 @@ import static utils.Outcome.*;
 
 public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
-    private HashMap<TestMethod, ArrayList<Integer>> coverage;
+    private Map<TestMethod, ArrayList<Integer>> coverage;
     private String logFilepath;
     private int offset = 0;
     private int factor = 1;
@@ -33,7 +33,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
      * @param offset value by which test method timeout measurement is offset
      * @param factor value by which test method timeout measurement is multiplied
      */
-    public DefaultMutationAnalyzer(HashMap<TestMethod, ArrayList<Integer>> coverage,
+    public DefaultMutationAnalyzer(Map<TestMethod, ArrayList<Integer>> coverage,
                                    String logFilepath, int offset, int factor) {
         this.coverage = coverage;
         this.logFilepath = logFilepath;
@@ -104,18 +104,18 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
         if (coverage.get(test).contains(mutantId)) {
             Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
             if (result == null) {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
+                //System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
                 return TIMEOUT;
             } else if (result.getFailureCount() != 0) {
                 if (isAssertionError(result)) {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: fail");
+                    //System.out.println("[" + mutantId + ", " + test.getName() + "]: fail");
                     return ASSERTION_ERROR;
                 } else {
-                    System.out.println("[" + mutantId + ", " + test.getName() + "]: crash");
+                    //System.out.println("[" + mutantId + ", " + test.getName() + "]: crash");
                     return GENERAL_EXCEPTION;
                 }
             } else {
-                System.out.println("[" + mutantId + ", " + test.getName() + "]: pass");
+                //System.out.println("[" + mutantId + ", " + test.getName() + "]: pass");
                 return UNKILLED;
             }
         } else {

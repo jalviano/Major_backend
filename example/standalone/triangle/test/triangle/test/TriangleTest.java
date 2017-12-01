@@ -106,7 +106,7 @@ public class TriangleTest extends TestCase {
         assertEquals (triangle.Triangle.classify(7,3,3), INVALID);
    }
 
-    public void testAddObjectArrayBoolean() {
+   /*public void testAddObjectArrayBoolean() {
         boolean[] newArray;
         newArray = triangle.Triangle.add(null, false);
         assertTrue(Arrays.equals(new boolean[]{false}, newArray));
@@ -120,7 +120,7 @@ public class TriangleTest extends TestCase {
         assertEquals(Boolean.TYPE, newArray.getClass().getComponentType());
     }
 
-   /*public void testForever() {
+   public void testForever() {
        triangle.Triangle.runForever();
    }*/
 }
