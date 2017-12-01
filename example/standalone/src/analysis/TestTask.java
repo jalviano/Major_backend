@@ -24,7 +24,7 @@ public class TestTask implements Callable<Result>{
      */
     @Override
     public Result call() throws TimeoutException, InterruptedException {
-        Request request = Request.method(test.getTestClass(), test.getName());
+        Request request = Request.method(test.reloadClass(), test.getName());
         return new JUnitCore().run(request);
     }
 }

@@ -54,7 +54,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             Config.__M_NO = i;
             for (TestMethod test : coverage.keySet()) {
                 Outcome result = analyzeTest(test, i);
-                matrix.addKillResult(test.getName(), result);
+                matrix.addKillResult(test.getLongName(), result);
                 if (result != UNKILLED && result != NOT_COVERED && !killed) {
                     killedCount++;
                     killed = true;
@@ -80,13 +80,13 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
             for (TestMethod test : coverage.keySet()) {
                 if (!killed) {
                     Outcome result = analyzeTest(test, i);
-                    matrix.addKillResult(test.getName(), result);
+                    matrix.addKillResult(test.getLongName(), result);
                     if (result != UNKILLED && result != NOT_COVERED) {
                         killedCount++;
                         killed = true;
                     }
                 } else {
-                    matrix.addKillResult(test.getName(), NOT_TESTED);
+                    matrix.addKillResult(test.getLongName(), NOT_TESTED);
                 }
             }
         }

@@ -1,6 +1,7 @@
 package triangle.test;
 
 import junit.framework.TestCase;
+import java.util.Arrays;
 import static triangle.Triangle.Type.*;
 
 public class TriangleTest extends TestCase {
@@ -104,6 +105,20 @@ public class TriangleTest extends TestCase {
    public void test33() {
         assertEquals (triangle.Triangle.classify(7,3,3), INVALID);
    }
+
+    public void testAddObjectArrayBoolean() {
+        boolean[] newArray;
+        newArray = triangle.Triangle.add(null, false);
+        assertTrue(Arrays.equals(new boolean[]{false}, newArray));
+        assertEquals(Boolean.TYPE, newArray.getClass().getComponentType());
+        newArray = triangle.Triangle.add(null, true);
+        assertTrue(Arrays.equals(new boolean[]{true}, newArray));
+        assertEquals(Boolean.TYPE, newArray.getClass().getComponentType());
+        final boolean[] array1 = new boolean[]{true, false, true};
+        newArray = triangle.Triangle.add(array1, false);
+        assertTrue(Arrays.equals(new boolean[]{true, false, true, false}, newArray));
+        assertEquals(Boolean.TYPE, newArray.getClass().getComponentType());
+    }
 
    /*public void testForever() {
        triangle.Triangle.runForever();

@@ -14,24 +14,16 @@ import java.util.List;
 
 public class Main {
 
-    // Are tests loaded never reloading underlying class?
-
-    // Benchmark Report:            Standalone      Optimized       Ant
+    // Benchmark Report:            Standalone      Fixed           Ant
 
     // Time to load classes:        17"             ---             ---
     // Time to run prepass:         4"              ---             37"
-    // Time to run analysis:        21'25"          ----            54'06"
+    // Time to run analysis:        21'25"          51'44"          54'06"
     // Time to format output:       2"              --              --
-    // Total time:                  21'48"          -----           54'44"
+    // Total time:                  21'48"          52'31"          54'44"
     // Mutant number:               24,607          ------          24,607
     // Mutants covered:             16,332          ----            16,332
-    // Mutation score:              47.91%          ------          49.29% / 74.26%
-
-    // Problematic unit test: ThreadUtilsTest.testComplexThreadGroups()
-    // [thread for testThreadsNullPredicate, 20164]
-    // [thread for testThreads, 20227]
-    // [thread for testAtLeastOneThreadGroupsExists, 20255]
-    // [thread for testAtLeastOneThreadGroupsExists, 20262]
+    // Mutation score:              47.91%          49.33%          49.29% / 74.26%
 
     /**
      * Builds backend pipeline to run mutation analysis.

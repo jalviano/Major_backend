@@ -31,7 +31,7 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
             for (TestMethod testMethod : testMethods) {
                 Config.__M_NO = 0;
                 long start = System.currentTimeMillis();
-                Request request = Request.method(testClass, testMethod.getName());
+                Request request = Request.method(testMethod.reloadClass(), testMethod.getName());
                 new JUnitCore().run(request);
                 long end = System.currentTimeMillis();
                 testMethod.setExecTime(end - start);

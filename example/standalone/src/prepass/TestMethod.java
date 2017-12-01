@@ -1,5 +1,9 @@
 package prepass;
 
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
+
 public class TestMethod implements Comparable<TestMethod> {
 
     private final Class<?> testClass;
@@ -18,6 +22,21 @@ public class TestMethod implements Comparable<TestMethod> {
     }
 
     /**
+     * Reloads and returns test method parent class. If an exception is thrown, returns the original class.
+     */
+    public Class<?> reloadClass() {
+        try {
+            String url = testClass.getProtectionDomain().getCodeSource().getLocation().getFile();
+            return new URLClassLoader(new URL[]{
+                    new File(url).toURI().toURL()
+            }).loadClass(testClass.getName());
+        } catch (Exception e) {
+            System.out.println("Error reloading class: " + testClass.getName());
+            return testClass;
+        }
+    }
+
+    /**
      * Retrieves test method parent class.
      */
     public Class<?> getTestClass() {
@@ -29,6 +48,10 @@ public class TestMethod implements Comparable<TestMethod> {
      */
     public String getName() {
         return this.name;
+    }
+
+    public String getLongName() {
+        return testClass.getName() + "[" + name + "]";
     }
 
     /**
