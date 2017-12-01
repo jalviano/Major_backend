@@ -21,6 +21,7 @@ import static utils.Outcome.*;
 
 public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
+    private HashMap<String, String> classes;
     private HashMap<TestMethod, ArrayList<Integer>> coverage;
     private String logFilepath;
     private int offset = 0;
@@ -33,8 +34,9 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
      * @param offset value by which test method timeout measurement is offset
      * @param factor value by which test method timeout measurement is multiplied
      */
-    public DefaultMutationAnalyzer(HashMap<TestMethod, ArrayList<Integer>> coverage,
+    public DefaultMutationAnalyzer(HashMap<String, String> classes, HashMap<TestMethod, ArrayList<Integer>> coverage,
                                    String logFilepath, int offset, int factor) {
+        this.classes = classes;
         this.coverage = coverage;
         this.logFilepath = logFilepath;
         this.offset = offset;
@@ -102,7 +104,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
      */
     private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
+            Result result = TestRunner.runTest(classes, test, getTimeout(test), mutantId);
             if (result == null) {
                 //System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
                 return TIMEOUT;

@@ -5,17 +5,22 @@ import org.junit.runner.Request;
 import org.junit.runner.Result;
 import prepass.TestMethod;
 
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeoutException;
 
 public class TestTask implements Callable<Result>{
 
+    private String classpath;
     private TestMethod test;
 
     /**
      * Constructor for task to run JUnit test.
      */
-    TestTask(TestMethod test) {
+    TestTask(String classpath, TestMethod test) {
+        this.classpath = classpath;
         this.test = test;
     }
 
@@ -24,7 +29,16 @@ public class TestTask implements Callable<Result>{
      */
     @Override
     public Result call() throws TimeoutException, InterruptedException {
-        Request request = Request.method(test.getTestClass(), test.getName());
-        return new JUnitCore().run(request);
+        try {
+            String classname = test.getTestClass().getName();
+            Class<?> c = new URLClassLoader(new URL[]{
+                    new File(classpath).toURI().toURL()
+            }).loadClass(classname);
+            Request request = Request.method(c, test.getName());
+            return new JUnitCore().run(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

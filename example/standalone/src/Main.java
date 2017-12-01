@@ -34,6 +34,8 @@ public class Main {
     // [thread for testAtLeastOneThreadGroupsExists, 20255]
     // [thread for testAtLeastOneThreadGroupsExists, 20262]
 
+    // Setup TestMethod objects to store class info and load new version of class as needed.
+
     /**
      * Builds backend pipeline to run mutation analysis.
      */
@@ -44,20 +46,22 @@ public class Main {
         int factor = Integer.parseInt(args[2]);
         String logFilepath = args[3];
         String[] testDirectories = Arrays.copyOfRange(args, 4, args.length);
-        List<Class<?>> testClasses;
+        HashMap<String, String> testClasses;
         try {
             System.out.println("Loading classes...");
-            testClasses = TestFinder.loadClasses(testDirectories);
+            testClasses = TestFinder.getTestClasses(testDirectories);
             timer.logTime("Time to load classes");
+
             // 1. PREPASS
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            printCoverage(coverage);
             timer.logTime("Time to run prepass");
+            printCoverage(coverage);
+
             // 2. MUTATION ANALYSIS
             System.out.println("Running mutation analysis...");
-            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(coverage, logFilepath, offset, factor);
+            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(testClasses, coverage, logFilepath, offset, factor);
             DefaultKillMatrix matrix;
             if (outputFullKillMatrix) {
                 matrix = analyzer.runFullAnalysis();
@@ -65,6 +69,7 @@ public class Main {
                 matrix = analyzer.runSparseAnalysis();
             }
             timer.logTime("Time to run analysis");
+
             // 3. RESULTS OUTPUT
             System.out.println("Formatting output...");
             CSVFormatter csvFormatter = new CSVFormatter();

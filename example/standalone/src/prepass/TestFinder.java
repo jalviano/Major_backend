@@ -30,6 +30,39 @@ public class TestFinder {
         return classes;
     }
 
+    public static HashMap<String, String> getTestClasses(String[] testDirectories) throws IOException {
+        HashMap<String, String> classes = new HashMap<>();
+        for (String directory : testDirectories) {
+            File folder = new File(directory);
+            String[] paths = folder.list();
+            getPaths(directory, paths, classes);
+        }
+        return classes;
+    }
+
+    private static void getPaths(String directory, String[] paths, HashMap<String, String> classes) throws IOException {
+        boolean hasSubdirectory = true;
+        while (hasSubdirectory) {
+            boolean noSubDirectory = true;
+            for (String path : paths) {
+                String filepath = directory + path;
+                File subfolder = new File(filepath);
+                if (subfolder.isDirectory()) {
+                    noSubDirectory = false;
+                    getPaths(filepath + "/", subfolder.list(), classes);
+                } else if (path.contains("Test.class")) {
+                    String classname = getClassName(filepath);
+                    String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
+                    classes.put(classname, packageBase);
+                    noSubDirectory = true;
+                } else {
+                    noSubDirectory = true;
+                }
+            }
+            hasSubdirectory = !noSubDirectory;
+        }
+    }
+
     /**
      * Loads test methods for a given class in the test suite.
      * @param cls test suite class from which methods are retrieved

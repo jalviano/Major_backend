@@ -3,6 +3,7 @@ package analysis;
 import org.junit.runner.Result;
 import prepass.TestMethod;
 
+import java.util.HashMap;
 import java.util.concurrent.*;
 
 class TestRunner {
@@ -14,8 +15,8 @@ class TestRunner {
      * @param mutantId mutant enabled during test
      * @return JUnit result for test method (null if test times out)
      */
-    static Result runTest(final TestMethod test, long timeout, int mutantId) {
-        FutureTask<Result> task = new FutureTask<>(new TestTask(test));
+    static Result runTest(HashMap<String, String> classes, TestMethod test, long timeout, int mutantId) {
+        FutureTask<Result> task = new FutureTask<>(new TestTask(classes.get(test.getTestClass().getName()), test));
         Thread thread = new Thread(task, "[thread for " + test.getName() + ", " + mutantId + "]");
         thread.start();
         try {

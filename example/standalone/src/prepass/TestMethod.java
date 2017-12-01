@@ -1,5 +1,9 @@
 package prepass;
 
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
+
 public class TestMethod implements Comparable<TestMethod> {
 
     private final Class<?> testClass;
@@ -15,6 +19,17 @@ public class TestMethod implements Comparable<TestMethod> {
     TestMethod(Class<?> testClass, String name) {
         this.testClass = testClass;
         this.name = name;
+    }
+
+    public Class<?> loadClass(String classpath) {
+        try {
+            return new URLClassLoader(new URL[]{
+                    new File(classpath).toURI().toURL()
+            }).loadClass(testClass.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return testClass;
+        }
     }
 
     /**
