@@ -14,8 +14,8 @@ class TestRunner {
      * @param mutantId mutant enabled during test
      * @return JUnit result for test method (null if test times out)
      */
-    static Result runTest(final TestMethod test, long timeout, int mutantId) {
-        FutureTask<Result> task = new FutureTask<>(new TestTask(test));
+    static Result runTest(TestMethod test, long timeout, int mutantId, boolean testIsolation) {
+        FutureTask<Result> task = new FutureTask<>(new TestTask(test, testIsolation));
         ThreadGroup group = new ThreadGroup("[thread group for " + test.getName() + ", " + mutantId + "]");
         Thread thread = new Thread(group, task, "[thread for " + test.getName() + ", " + mutantId + "]");
         thread.start();

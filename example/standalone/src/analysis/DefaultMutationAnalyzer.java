@@ -22,9 +22,10 @@ import static utils.Outcome.*;
 public class DefaultMutationAnalyzer implements MutationAnalyzer {
 
     private Map<TestMethod, ArrayList<Integer>> coverage;
-    private String logFilepath;
+    private boolean testIsolation;
     private int offset = 0;
     private int factor = 1;
+    private String logFilepath;
 
     /**
      * Default mutation analyzer constructor to run mutation analysis phase.
@@ -33,12 +34,13 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
      * @param offset value by which test method timeout measurement is offset
      * @param factor value by which test method timeout measurement is multiplied
      */
-    public DefaultMutationAnalyzer(Map<TestMethod, ArrayList<Integer>> coverage,
-                                   String logFilepath, int offset, int factor) {
+    public DefaultMutationAnalyzer(Map<TestMethod, ArrayList<Integer>> coverage, boolean testIsolation, int offset,
+                                   int factor, String logFilepath) {
         this.coverage = coverage;
-        this.logFilepath = logFilepath;
+        this.testIsolation = testIsolation;
         this.offset = offset;
         this.factor = factor;
+        this.logFilepath = logFilepath;
     }
 
     /**
@@ -102,7 +104,7 @@ public class DefaultMutationAnalyzer implements MutationAnalyzer {
      */
     private Outcome analyzeTest(TestMethod test, int mutantId) {
         if (coverage.get(test).contains(mutantId)) {
-            Result result = TestRunner.runTest(test, getTimeout(test), mutantId);
+            Result result = TestRunner.runTest(test, getTimeout(test), mutantId, testIsolation);
             if (result == null) {
                 //System.out.println("[" + mutantId + ", " + test.getName() + "]: timeout");
                 return TIMEOUT;

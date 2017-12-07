@@ -21,7 +21,7 @@ public class Main {
     // Total time:                  21'48"          52'31"          54'44"
     // Mutant number:               24,607          ------          24,607
     // Mutants covered:             16,332          ----            16,332
-    // Mutation score:              47.91%          49.33%          49.29% / 74.26%
+    // Mutation score:              47.32%          49.33%          49.32% / 74.31%
 
     /**
      * Builds backend pipeline to run mutation analysis.
@@ -30,10 +30,11 @@ public class Main {
         PipelineTimer timer = new PipelineTimer();
         boolean outputFullKillMatrix = Boolean.parseBoolean(args[0]);
         boolean sortOptimization = Boolean.parseBoolean(args[1]);
-        int offset = Integer.parseInt(args[2]);
-        int factor = Integer.parseInt(args[3]);
-        String logFilepath = args[4];
-        String[] testDirectories = Arrays.copyOfRange(args, 5, args.length);
+        boolean testIsolation = Boolean.parseBoolean(args[2]);
+        int offset = Integer.parseInt(args[3]);
+        int factor = Integer.parseInt(args[4]);
+        String logFilepath = args[5];
+        String[] testDirectories = Arrays.copyOfRange(args, 6, args.length);
         List<Class<?>> testClasses;
         try {
             System.out.println("Loading classes...");
@@ -49,7 +50,8 @@ public class Main {
             Map<TestMethod, ArrayList<Integer>> optimizedCoverage = optimizer.runOptimizations();
             // 3. MUTATION ANALYSIS
             System.out.println("Running mutation analysis...");
-            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(optimizedCoverage, logFilepath, offset, factor);
+            DefaultMutationAnalyzer analyzer = new DefaultMutationAnalyzer(optimizedCoverage, testIsolation, offset,
+                    factor, logFilepath);
             DefaultKillMatrix matrix;
             if (outputFullKillMatrix) {
                 matrix = analyzer.runFullAnalysis();

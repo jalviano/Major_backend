@@ -8,6 +8,7 @@
 
     <property name="outputFullKillMatrix" value="true"/>
     <property name="sortOptimization" value="true"/>
+    <property name="testIsolation" value="true"/>
     <property name="offset" value="1"/>
     <property name="factor" value="2"/>
     <property name="logFilePath" value="mutants.log"/>
@@ -90,6 +91,7 @@
         <java classname="Main">
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>
+            <arg value="${testIsolation}"/>
             <arg value="${offset}"/>
             <arg value="${factor}"/>
             <arg value="${logFilePath}"/>
