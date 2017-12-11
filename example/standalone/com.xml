@@ -1,35 +1,59 @@
 <project name="StandaloneBackend" default="compile" basedir=".">
 
-    <property name="mutOp" value=":ALL"/>
-    <property name="mutator" value="-XMutator${mutOp}"/>
-    <property name="major" value="../../bin/javac"/>
-    <property name="config" value="../../config/config.jar"/>
-    <property name="junit" value="../../lib/junit-4.11.jar"/>
+    <property name="mutOp"
+              value=":ALL"/>
+    <property name="mutator"
+              value="-XMutator${mutOp}"/>
+    <property name="major"
+              value="../../bin/javac"/>
+    <property name="config"
+              value="../../config/config.jar"/>
+    <property name="junit"
+              value="../../lib/junit-4.11.jar"/>
+    <property name="hamcrest"
+              value="../../lib/hamcrest-all-1.3.jar"/>
+    <property name="easymock"
+              value="../../lib/easymock-3.5.jar"/>
 
-    <property name="outputFullKillMatrix" value="true"/>
-    <property name="sortOptimization" value="true"/>
-    <property name="testIsolation" value="true"/>
-    <property name="offset" value="1"/>
-    <property name="factor" value="2"/>
-    <property name="logFilePath" value="mutants.log"/>
-    <property name="testDirectory" value="bin/org/apache/commons/lang3"/>
+    <!-- Major backend configuration properties -->
+    <property name="outputFullKillMatrix"
+              value="true"/>
+    <property name="sortOptimization"
+              value="true"/>
+    <property name="testIsolation"
+              value="true"/>
+    <property name="offset"
+              value="1000"/>
+    <property name="factor"
+              value="16"/>
+    <property name="logFilePath"
+              value="mutants.log"/>
+    <property name="testDirectory"
+              value="bin/org/apache/commons/lang3/"/>
 
     <!-- Target to clean up -->
-    <target name="clean" description="Clean">
+    <target name="clean"
+            description="Clean">
         <delete dir="bin"/>
+        <delete dir="production"/>
         <delete>
-            <fileset dir="." includes="*.csv"/>
-            <fileset dir="." includes="*.log"/>
+            <fileset dir="."
+                     includes="*.csv"/>
+            <fileset dir="."
+                     includes="*.log"/>
         </delete>
     </target>
 
     <!-- Target to initialize build -->
     <target name="init">
         <mkdir dir="bin"/>
+        <mkdir dir="production"/>
     </target>
 
     <!-- Target to compile the project -->
-    <target name="compile" depends="init" description="Compile">
+    <target name="compile"
+            depends="init"
+            description="Compile">
         <javac includeantruntime="true"
                srcdir="dir/main/java/org/apache/commons/lang3"
                destdir="bin"
@@ -42,27 +66,32 @@
     </target>
 
     <!-- Target to compile the test suite -->
-    <target name="compile.tests" depends="compile" description="Compile all tests">
+    <target name="compile.tests"
+            depends="compile"
+            description="Compile all tests">
         <javac includeantruntime="true"
                srcdir="dir/test/java/org/apache/commons/lang3"
                destdir="bin"
                debug="yes">
             <classpath>
                 <pathelement location="${junit}"/>
-                <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
-                <pathelement location="../../lib/easymock-3.5.jar"/>
+                <pathelement location="${hamcrest}"/>
+                <pathelement location="${easymock}"/>
             </classpath>
             <compilerarg value="-Xlint:none"/>
         </javac>
     </target>
 
     <!-- The original test target -->
-    <target name="test" depends="compile.tests" description="Run all unit test cases">
+    <target name="test"
+            depends="compile.tests"
+            description="Run all unit test cases">
         <echo message="Running unit tests ..."/>
         <junit printsummary="true"
                showoutput="true"
                haltonfailure="false">
-            <formatter type="plain" usefile="false"/>
+            <formatter type="plain"
+                       usefile="false"/>
             <classpath path="bin"/>
             <batchtest fork="no">
                 <fileset dir="test">
@@ -73,25 +102,33 @@
     </target>
 
     <!-- Target to compile the analysis backend -->
-    <target name="compile.analysis" description="Compile mutation analysis backend">
+    <target name="compile.analysis"
+            description="Compile mutation analysis backend">
         <echo message="Compiling mutation analysis backend..."/>
         <javac includeantruntime="true"
                srcdir="src"
                destdir="production"
+               debug="yes"
                executable="${major}">
             <compilerarg value="-Xlint:none"/>
             <classpath>
                 <pathelement location="${config}"/>
                 <pathelement location="${junit}"/>
-                <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
-                <pathelement location="../../lib/easymock-3.5.jar"/>
+                <pathelement location="${hamcrest}"/>
+                <pathelement location="${easymock}"/>
             </classpath>
         </javac>
     </target>
 
-    <target name="run.analysis" depends="compile.analysis" description="Run mutation analysis for all unit test cases">
+    <!-- Target to run the analysis backend -->
+    <target name="run.analysis"
+            depends="compile.analysis"
+            description="Run mutation analysis for all unit test cases">
         <echo message="Running mutation analysis backend..."/>
-        <java classname="Main">
+        <exec executable="java">
+            <arg value="-cp"/>
+            <arg value="production:${config}:${junit}:${hamcrest}:${easymock}"/>
+            <arg value="Main"/>
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>
             <arg value="${testIsolation}"/>
@@ -99,32 +136,26 @@
             <arg value="${factor}"/>
             <arg value="${logFilePath}"/>
             <arg value="${testDirectory}"/>
-            <classpath>
-                <pathelement location="production"/>
-                <pathelement location="${config}"/>
-                <pathelement location="${junit}"/>
-                <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
-                <pathelement location="../../lib/easymock-3.5.jar"/>
-            </classpath>
-        </java>
+        </exec>
     </target>
 
     <!-- The adapted mutation test target -->
-    <target name="mutation.test" description="Run mutation analysis for all unit test cases">
+    <target name="mutation.test"
+            description="Run mutation analysis for all unit test cases">
         <echo message="Running mutation analysis ..."/>
         <junit printsummary="false"
                showoutput="false"
                mutationAnalysis="true"
                sort="sort_methods"
-               timeoutOffset="1000"
-               timeoutFactor="2"
+               timeoutOffset="${offset}"
+               timeoutFactor="${factor}"
                exportKillMap="true"
                resultFile="results.csv"
                killDetailsFile="killed.csv">
             <classpath>
                 <pathelement location="${junit}"/>
-                <pathelement location="../../lib/hamcrest-all-1.3.jar"/>
-                <pathelement location="../../lib/easymock-3.5.jar"/>
+                <pathelement location="${hamcrest}"/>
+                <pathelement location="${easymock}"/>
                 <pathelement location="bin"/>
             </classpath>
             <batchtest fork="false">
