@@ -8,7 +8,7 @@ import prepass.TestMethod;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeoutException;
 
-public class TestTask implements Callable<Result>{
+public class TestTask implements Callable<Result> {
 
     private TestMethod test;
     private boolean testIsolation;

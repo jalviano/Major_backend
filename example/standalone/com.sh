@@ -7,14 +7,14 @@ echo "=================================================================="
 echo "Compiling backend"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile com.xml compile.analysis
+${MAJOR_HOME}/bin/ant -buildfile com.xml clean init compile.analysis
 
 echo
 echo "=================================================================="
 echo "Compiling and mutating project"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile com.xml clean init compile
+${MAJOR_HOME}/bin/ant -buildfile com.xml compile
 
 echo
 echo "=================================================================="
@@ -35,5 +35,4 @@ echo "=================================================================="
 echo "Run tests with mutation analysis"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile com.xml run.analysis
-# ${MAJOR_HOME}/bin/ant -buildfile com.xml mutation.test
+${MAJOR_HOME}/bin/ant -buildfile com.xml mutation.test

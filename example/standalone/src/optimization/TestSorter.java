@@ -15,11 +15,6 @@ class TestSorter {
         }
     };
 
-    static ArrayList<TestMethod> sortTests(ArrayList<TestMethod> tests) {
-        Collections.sort(tests, comparator);
-        return tests;
-    }
-
     static LinkedHashMap<TestMethod, ArrayList<Integer>> sortTests(Map<TestMethod, ArrayList<Integer>> coverage) {
         ArrayList<TestMethod> tests = new ArrayList<>();
         tests.addAll(coverage.keySet());

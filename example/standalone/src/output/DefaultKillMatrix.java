@@ -100,7 +100,7 @@ public class DefaultKillMatrix implements KillMatrix, KillMatrixBuilder {
         for (String test : matrix.keySet()) {
             ArrayList<Outcome> mutants = matrix.get(test);
             Outcome killResult = mutants.get(mutant - 1);
-            if (killResult != NOT_COVERED) {
+            if (killResult != NOT_COVERED && killResult != NOT_TESTED) {
                 tests.put(test, killResult);
             }
         }
@@ -117,12 +117,12 @@ public class DefaultKillMatrix implements KillMatrix, KillMatrixBuilder {
     /**
      * Retrieves map of all mutants covered by provided test and their outcomes when mutant is enabled.
      */
-    public HashMap<Integer, Outcome> getMutantsForTest_(String test) {
+    public HashMap<Integer, Outcome> getMutantsForTestSparse(String test) {
         ArrayList<Outcome> allMutants = matrix.get(test);
         HashMap<Integer, Outcome> mutants = new HashMap<>();
         for (int i = 0; i < allMutants.size(); i++) {
             Outcome killResult = allMutants.get(i);
-            if (killResult != NOT_COVERED) {
+            if (killResult != NOT_COVERED && killResult != NOT_TESTED) {
                 mutants.put(i + 1, killResult);
             }
         }

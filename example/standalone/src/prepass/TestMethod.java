@@ -16,7 +16,7 @@ public class TestMethod implements Comparable<TestMethod> {
      * @param testClass parent class of test method
      * @param name test method name
      */
-    TestMethod(Class<?> testClass, String name) {
+    public TestMethod(Class<?> testClass, String name) {
         this.testClass = testClass;
         this.name = name;
     }
@@ -65,7 +65,7 @@ public class TestMethod implements Comparable<TestMethod> {
      * Method to set initial execution time of test method during prepass phase with all mutants disabled.
      * @param execTime initial test method execution time
      */
-    void setExecTime(long execTime) {
+    public void setExecTime(long execTime) {
         this.execTime = execTime;
     }
 

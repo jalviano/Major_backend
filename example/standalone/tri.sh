@@ -1,29 +1,20 @@
 #!/bin/sh
 
 MAJOR_HOME="../.."
-OUTPUT="production/"
-
-OUTPUT_FULL_KILL_MATRIX=true
-SORT_OPTIMIZATION=true
-TEST_ISOLATION=true
-OFFSET=1
-FACTOR=2
-LOG_FILEPATH="mutants.log"
-TEST_DIRECTORY="bin/triangle/test/"
 
 echo
 echo "=================================================================="
 echo "Compiling backend"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile tri.xml compile.analysis
+${MAJOR_HOME}/bin/ant -buildfile tri.xml clean init compile.analysis
 
 echo
 echo "=================================================================="
 echo "Compiling and mutating project"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile tri.xml clean init compile
+${MAJOR_HOME}/bin/ant -buildfile tri.xml compile
 
 echo
 echo "=================================================================="
@@ -44,5 +35,4 @@ echo "=================================================================="
 echo "Run tests with mutation analysis"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile tri.xml run.analysis
-# ${MAJOR_HOME}/bin/ant -buildfile tri.xml mutation.test
+${MAJOR_HOME}/bin/ant -buildfile tri.xml mutation.test

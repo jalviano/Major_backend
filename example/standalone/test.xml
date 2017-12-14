@@ -1,0 +1,101 @@
+<project name="StandaloneBackend" default="test" basedir=".">
+
+    <property name="major" value="../../bin/javac"/>
+    <property name="config" value="../../config/config.jar"/>
+    <property name="junit" value="../../lib/junit-4.11.jar"/>
+
+    <!-- Target to clean up -->
+    <target name="clean" description="Clean">
+        <delete dir="bin"/>
+        <delete dir="production"/>
+    </target>
+
+    <!-- Target to initialize build -->
+    <target name="init">
+        <mkdir dir="bin"/>
+        <mkdir dir="production"/>
+    </target>
+
+    <!-- Target to compile the project -->
+    <target name="project.compile"
+            description="Compile"
+            depends="clean,init">
+        <javac includeantruntime="true"
+               srcdir="triangle/src/triangle"
+               destdir="bin"
+               debug="yes"
+               fork="yes">
+        </javac>
+    </target>
+
+    <!-- Target to compile the project test suite -->
+    <target name="project.compile.tests"
+            description="Compile all tests"
+            depends="project.compile">
+        <javac includeantruntime="true"
+               srcdir="triangle/test/triangle/test"
+               destdir="bin"
+               debug="yes">
+            <classpath>
+                <pathelement location="${junit}"/>
+            </classpath>
+            <compilerarg value="-Xlint:none"/>
+        </javac>
+    </target>
+
+    <!-- Target to compile the analysis backend -->
+    <target name="backend.compile" description="Compile mutation analysis backend">
+        <javac includeantruntime="true"
+               srcdir="src"
+               destdir="production"
+               debug="yes"
+               executable="${major}">
+            <compilerarg value="-Xlint:none"/>
+            <classpath>
+                <pathelement location="${config}"/>
+                <pathelement location="${junit}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Target to compile the backend test suite -->
+    <target name="backend.compile.tests"
+            description="Compile all tests"
+            depends="backend.compile">
+        <javac includeantruntime="true"
+               srcdir="test"
+               destdir="production"
+               nowarn="true"
+               debug="yes">
+            <classpath location="${junit}"/>
+            <compilerarg value="-Xlint:none"/>
+        </javac>
+    </target>
+
+    <!-- Target to run the backend tests -->
+    <target name="test"
+            description="Run all unit test cases"
+            depends="backend.compile.tests">
+        <junit printsummary="true"
+               showoutput="true"
+               fork="true"
+               haltonfailure="true">
+            <formatter type="plain" usefile="false"/>
+            <classpath path="production"/>
+            <classpath>
+                <pathelement location="${config}"/>
+                <pathelement location="${junit}"/>
+            </classpath>
+            <batchtest fork="true">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"/>
+                    <exclude name="**/MainTest.java"/>
+                    <exclude name="**/DefaultPrepassAnalyzerTest.java"/>
+                    <exclude name="**/DefaultMutationAnalyzerTest.java"/>
+                    <exclude name="**/CSVFormatterTest.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+</project>

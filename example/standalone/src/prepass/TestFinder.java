@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
@@ -40,9 +41,11 @@ public class TestFinder {
         for (Description test : Request.aClass(cls).getRunner().getDescription().getChildren()) {
             if (test.getMethodName() == null) {
                 for (Method m : cls.getMethods()) {
-                    tests.add(new TestMethod(cls, m.getName() + test.getDisplayName()));
+                    if (looksLikeTest(m)) {
+                        tests.add(new TestMethod(cls, m.getName() + test.getDisplayName()));
+                    }
                 }
-            } else if (test.getMethodName().startsWith("test") || test.getMethodName().endsWith("Test")) {
+            } else {
                 tests.add(new TestMethod(test.getTestClass(), test.getMethodName()));
             }
         }
@@ -116,5 +119,14 @@ public class TestFinder {
             }
         }
         return classname;
+    }
+
+    private static boolean looksLikeTest(Method m) {
+        return (m.isAnnotationPresent(org.junit.Test.class)
+                || (m.getParameterTypes().length == 0
+                    && m.getReturnType().equals(Void.TYPE)
+                    && Modifier.isPublic(m.getModifiers())
+                    && (m.getName().startsWith("test") || m.getName().endsWith("Test")
+                        || m.getName().startsWith("Test") || m.getName().endsWith("test"))));
     }
 }

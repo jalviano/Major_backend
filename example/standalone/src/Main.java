@@ -44,6 +44,7 @@ public class Main {
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
+            // printCoverage(coverage);
             timer.logTime("Time to run prepass");
             // 2. OPTIMIZATION
             DefaultOptimizer optimizer = new DefaultOptimizer(coverage, sortOptimization);
@@ -69,5 +70,16 @@ public class Main {
             e.printStackTrace();
         }
         System.exit(0);
+    }
+
+    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
+        System.out.println("Covered mutants: ");
+        for (TestMethod key : coverage.keySet()) {
+            if (key.getName().equals("testConstants")
+                    || key.getName().equals("test_toIntegerObject_Boolean")
+                    || key.getName().equals("test_toIntegerObject_boolean")) {
+                System.out.println(key.getName() + ": " + coverage.get(key).toString());
+            }
+        }
     }
 }

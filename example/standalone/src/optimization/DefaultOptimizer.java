@@ -11,7 +11,7 @@ public class DefaultOptimizer {
     private Map<TestMethod, ArrayList<Integer>> coverage;
     private boolean sortOptimization;
 
-    public DefaultOptimizer(HashMap<TestMethod, ArrayList<Integer>> coverage, boolean sortOptimization) {
+    public DefaultOptimizer(Map<TestMethod, ArrayList<Integer>> coverage, boolean sortOptimization) {
         this.coverage = coverage;
         this.sortOptimization = sortOptimization;
     }

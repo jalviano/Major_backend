@@ -33,7 +33,7 @@ public class CSVFormatter implements Formatter {
                 List<String> line = new ArrayList<>();
                 line.add(test);
                 for (Outcome result : matrix.getMutantsForTest(test)) {
-                    if (result == NOT_COVERED) {
+                    if (result == NOT_COVERED || result == NOT_TESTED) {
                         line.add("");
                     } else {
                         line.add(Integer.toString(result.getId()));
