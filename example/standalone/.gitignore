@@ -1,9 +1,12 @@
 bin/
+coverage_results/
 .idea/
+.instrumented/
 .DS_STORE
 */.DS_STORE
 *.class
 *.log
 *.csv
 *.txt
+*.ser
 ../../.idea/

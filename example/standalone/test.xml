@@ -1,11 +1,26 @@
 <project name="StandaloneBackend" default="test" basedir=".">
 
+    <property name="dir.cov" value="coverage_results"/>
     <property name="major" value="../../bin/javac"/>
     <property name="config" value="../../config/config.jar"/>
     <property name="junit" value="../../lib/junit-4.11.jar"/>
+    <property name="cobertura" value="../../lib/cobertura-2.0.3.jar"/>
+
+    <!-- Configuration for Cobertura -->
+    <path id="cobertura.classpath">
+        <fileset dir="../../lib">
+            <include name="cobertura-2.0.3.jar"/>
+            <include name="cobertura-lib/**/*.jar"/>
+        </fileset>
+    </path>
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
 
     <!-- Target to clean up -->
     <target name="clean" description="Clean">
+        <delete>
+            <fileset dir="." includes="*.ser"/>
+        </delete>
+        <delete dir="${dir.cov}"/>
         <delete dir="bin"/>
         <delete dir="production"/>
     </target>
@@ -23,6 +38,9 @@
         <javac includeantruntime="true"
                srcdir="triangle/src/triangle"
                destdir="bin"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                debug="yes"
                fork="yes">
         </javac>
@@ -35,6 +53,9 @@
         <javac includeantruntime="true"
                srcdir="triangle/test/triangle/test"
                destdir="bin"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                debug="yes">
             <classpath>
                 <pathelement location="${junit}"/>
@@ -48,6 +69,9 @@
         <javac includeantruntime="true"
                srcdir="src"
                destdir="production"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                debug="yes"
                executable="${major}">
             <compilerarg value="-Xlint:none"/>
@@ -65,6 +89,9 @@
         <javac includeantruntime="true"
                srcdir="test"
                destdir="production"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                nowarn="true"
                debug="yes">
             <classpath location="${junit}"/>
@@ -81,10 +108,12 @@
                fork="true"
                haltonfailure="true">
             <formatter type="plain" usefile="false"/>
+            <classpath path=".instrumented"/>
             <classpath path="production"/>
             <classpath>
                 <pathelement location="${config}"/>
                 <pathelement location="${junit}"/>
+                <pathelement location="${cobertura}"/>
             </classpath>
             <batchtest fork="true">
                 <fileset dir="test">
@@ -96,6 +125,25 @@
                 </fileset>
             </batchtest>
         </junit>
+    </target>
+
+    <!-- Get coverage information -->
+    <target name="coverage" description="Run coverage analysis">
+        <antcall target="backend.compile"/>
+        <cobertura-instrument failOnError="true" toDir=".instrumented">
+            <fileset dir="production">
+                <include name="**/*.class"/>
+            </fileset>
+        </cobertura-instrument>
+        <antcall target="test"/>
+        <delete dir="${dir.cov}"/>
+        <mkdir dir="${dir.cov}"/>
+        <cobertura-report format="html"
+                          destdir="${dir.cov}"
+                          srcdir="src"/>
+        <cobertura-report format="summaryXml"
+                          destdir="${dir.cov}"
+                          srcdir="src"/>
     </target>
 
 </project>

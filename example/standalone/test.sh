@@ -14,4 +14,4 @@ echo "=================================================================="
 echo "Running major standalone backend unit tests"
 echo "=================================================================="
 echo
-${MAJOR_HOME}/bin/ant -buildfile test.xml test
+${MAJOR_HOME}/bin/ant -buildfile test.xml coverage
