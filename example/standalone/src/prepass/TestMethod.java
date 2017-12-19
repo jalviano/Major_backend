@@ -1,5 +1,7 @@
 package prepass;
 
+import utils.ChildFirstURLClassLoader;
+
 import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -8,6 +10,7 @@ public class TestMethod implements Comparable<TestMethod> {
 
     private final Class<?> testClass;
     private final String name;
+    private String mutatedDirectory;
     private static final char SEPARATOR = '#';
     private long execTime;
 
@@ -16,9 +19,10 @@ public class TestMethod implements Comparable<TestMethod> {
      * @param testClass parent class of test method
      * @param name test method name
      */
-    public TestMethod(Class<?> testClass, String name) {
+    public TestMethod(Class<?> testClass, String name, String mutatedDirectory) {
         this.testClass = testClass;
         this.name = name;
+        this.mutatedDirectory = mutatedDirectory;
     }
 
     /**
@@ -26,10 +30,11 @@ public class TestMethod implements Comparable<TestMethod> {
      */
     public Class<?> reloadClass() {
         try {
-            String url = testClass.getProtectionDomain().getCodeSource().getLocation().getFile();
-            return new URLClassLoader(new URL[]{
-                    new File(url).toURI().toURL()
-            }).loadClass(testClass.getName());
+            URL mainUrl = new File(mutatedDirectory).toURI().toURL();
+            URL testUrl = new File(testClass.getProtectionDomain().getCodeSource().getLocation().getFile()).toURI().toURL();
+            ChildFirstURLClassLoader classLoader = new ChildFirstURLClassLoader(new URL[] {mainUrl, testUrl},
+                    Thread.currentThread().getContextClassLoader());
+            return classLoader.loadClass(testClass.getName());
         } catch (Exception e) {
             System.out.println("Error reloading class: " + testClass.getName());
             return testClass;

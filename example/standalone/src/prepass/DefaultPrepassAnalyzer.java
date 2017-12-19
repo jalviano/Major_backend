@@ -9,13 +9,15 @@ import java.util.*;
 public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
 
     private List<Class<?>> testClasses;
+    private String mutatedDirectory;
 
     /**
      * Default prepass analyzer constructor to run prepass phase of mutation analysis.
      * @param testClasses suite of test classes to be used for analysis
      */
-    public DefaultPrepassAnalyzer(List<Class<?>> testClasses) {
+    public DefaultPrepassAnalyzer(List<Class<?>> testClasses, String mutatedDirectory) {
         this.testClasses = testClasses;
+        this.mutatedDirectory = mutatedDirectory;
     }
 
     /**
@@ -27,7 +29,7 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
         HashMap<TestMethod, ArrayList<Integer>> coverage = new HashMap<>();
         HashSet<Integer> totalCovered = new HashSet<>();
         for (Class<?> testClass : testClasses) {
-            Collection<TestMethod> testMethods = TestFinder.getTestMethods(testClass);
+            Collection<TestMethod> testMethods = TestFinder.getTestMethods(testClass, mutatedDirectory);
             for (TestMethod testMethod : testMethods) {
                 Config.__M_NO = 0;
                 long start = System.currentTimeMillis();

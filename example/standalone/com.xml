@@ -1,6 +1,6 @@
 <project name="StandaloneBackend" default="compile" basedir=".">
 
-    <property name="mutOp" value=":ALL"/>
+    <property name="mutOp" value="=/Users/Justin/defects4j/framework/projects/Lang-1/.mml/default.mml.bin"/>
     <property name="mutator" value="-XMutator${mutOp}"/>
     <property name="major" value="../../bin/javac"/>
     <property name="config" value="../../config/config.jar"/>
@@ -15,7 +15,8 @@
     <property name="offset" value="1000"/>
     <property name="factor" value="16"/>
     <property name="logFilePath" value="mutants.log"/>
-    <property name="testDirectory" value="bin/org/apache/commons/lang3/"/>
+    <property name="mutatedDirectory" value="bin/main"/>
+    <property name="testDirectory" value="bin/test/org/apache/commons/lang3/"/>
 
     <!-- Target to clean up -->
     <target name="clean" description="Clean">
@@ -29,7 +30,8 @@
 
     <!-- Target to initialize build -->
     <target name="init">
-        <mkdir dir="bin"/>
+        <mkdir dir="bin/main"/>
+        <mkdir dir="bin/test"/>
         <mkdir dir="production"/>
     </target>
 
@@ -37,8 +39,11 @@
     <target name="compile" description="Compile">
         <javac includeantruntime="true"
                srcdir="dir/main/java/org/apache/commons/lang3"
-               destdir="bin"
+               destdir="bin/main"
                debug="yes"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                fork="yes"
                executable="${major}">
             <compilerarg value="${mutator}"/>
@@ -50,9 +55,13 @@
     <target name="compile.tests" description="Compile all tests">
         <javac includeantruntime="true"
                srcdir="dir/test/java/org/apache/commons/lang3"
-               destdir="bin"
+               destdir="bin/test"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                debug="yes">
             <classpath>
+                <pathelement location="bin/main"/>
                 <pathelement location="${junit}"/>
                 <pathelement location="${hamcrest}"/>
                 <pathelement location="${easymock}"/>
@@ -67,7 +76,8 @@
                showoutput="true"
                haltonfailure="false">
             <formatter type="plain" usefile="false"/>
-            <classpath path="bin"/>
+            <classpath path="bin/test"/>
+            <classpath location="bin/main"/>
             <batchtest fork="no">
                 <fileset dir="dir/test/java">
                     <include name="**/*Test*.java"/>
@@ -81,6 +91,9 @@
         <javac includeantruntime="true"
                srcdir="src"
                destdir="production"
+               source="1.7"
+               target="1.7"
+               compiler="javac1.7"
                debug="yes"
                executable="${major}">
             <compilerarg value="-Xlint:none"/>
@@ -97,7 +110,7 @@
     <target name="mutation.test" description="Run mutation analysis for all unit test cases">
         <exec executable="java">
             <arg value="-cp"/>
-            <arg value="production:${config}:${junit}:${hamcrest}:${easymock}"/>
+            <arg value="production:${config}:bin/main:${junit}:${hamcrest}:${easymock}"/>
             <arg value="Main"/>
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>
@@ -105,6 +118,7 @@
             <arg value="${offset}"/>
             <arg value="${factor}"/>
             <arg value="${logFilePath}"/>
+            <arg value="${mutatedDirectory}"/>
             <arg value="${testDirectory}"/>
         </exec>
     </target>

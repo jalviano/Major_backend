@@ -25,14 +25,14 @@ ${MAJOR_HOME}/bin/ant -buildfile com.xml compile.tests
 
 echo
 echo "=================================================================="
-echo "Run tests without mutation analysis"
+echo "Running tests without mutation analysis"
 echo "=================================================================="
 echo
 ${MAJOR_HOME}/bin/ant -buildfile com.xml test
 
 echo
 echo "=================================================================="
-echo "Run tests with mutation analysis"
+echo "Running tests with mutation analysis"
 echo "=================================================================="
 echo
 ${MAJOR_HOME}/bin/ant -buildfile com.xml mutation.test

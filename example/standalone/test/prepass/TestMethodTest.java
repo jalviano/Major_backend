@@ -26,8 +26,14 @@ public class TestMethodTest {
     }
 
     @Test
-    public void reloadClassTest() {
+    public void reloadClassTest1() {
         Assert.assertEquals(testClass.getName(), testMethod.reloadClass().getName());
+    }
+
+    @Test(expected=Exception.class)
+    public void reloadClassTest2() {
+        TestMethod test = new TestMethod(null, "test");
+        test.reloadClass();
     }
 
     @Test
@@ -43,12 +49,35 @@ public class TestMethodTest {
     @Test
     public void getLongNameTest() {
         Assert.assertEquals("triangle.test.TriangleTest[test1]", testMethod.getLongName());
-
     }
 
     @Test
     public void execTimeTest() {
         testMethod.setExecTime(1000);
         Assert.assertEquals(1000, testMethod.getExecTime());
+    }
+
+    @Test
+    public void equalsTest1() {
+        try {
+            testClass = new URLClassLoader(new URL[]{
+                    new File("bin/").toURI().toURL()
+            }).loadClass("triangle.test.TriangleTest");
+            TestMethod test = new TestMethod(testClass, "test1");
+            Assert.assertTrue(testMethod.equals(test));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void equalsTest2() {
+        String empty = "";
+        Assert.assertFalse(testMethod.equals(empty));
+    }
+
+    @Test
+    public void compareToTest() {
+
     }
 }

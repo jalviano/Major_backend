@@ -36,17 +36,17 @@ public class TestFinder {
      * @param cls test suite class from which methods are retrieved
      * @return collection of test methods for class
      */
-    static Collection<TestMethod> getTestMethods(Class<?> cls) {
+    static Collection<TestMethod> getTestMethods(Class<?> cls, String mutatedDirectory) {
         Vector<TestMethod> tests = new Vector<>();
         for (Description test : Request.aClass(cls).getRunner().getDescription().getChildren()) {
             if (test.getMethodName() == null) {
                 for (Method m : cls.getMethods()) {
                     if (looksLikeTest(m)) {
-                        tests.add(new TestMethod(cls, m.getName() + test.getDisplayName()));
+                        tests.add(new TestMethod(cls, m.getName() + test.getDisplayName(), mutatedDirectory));
                     }
                 }
             } else {
-                tests.add(new TestMethod(test.getTestClass(), test.getMethodName()));
+                tests.add(new TestMethod(test.getTestClass(), test.getMethodName(), mutatedDirectory));
             }
         }
         Collections.sort(tests);

@@ -23,6 +23,14 @@ public class Main {
     // Mutants covered:             16,332          ----            16,332
     // Mutation score:              47.32%          49.33%          49.32% / 74.31%
 
+
+    // Defects4j Benchmarks Report:                 Standalone      Ant
+
+    // defects4j checkout -pLang -v1f -wLang-1:
+    // Time to run analysis:                        62"             88"
+    // Total time:                                  159"            156"
+    // Mutation score:                              68.65%          68.65%
+
     /**
      * Builds backend pipeline to run mutation analysis.
      */
@@ -34,7 +42,8 @@ public class Main {
         int offset = Integer.parseInt(args[3]);
         int factor = Integer.parseInt(args[4]);
         String logFilepath = args[5];
-        String[] testDirectories = Arrays.copyOfRange(args, 6, args.length);
+        String mutatedDirectory = args[6];
+        String[] testDirectories = Arrays.copyOfRange(args, 7, args.length);
         List<Class<?>> testClasses;
         try {
             System.out.println("Loading classes...");
@@ -42,9 +51,9 @@ public class Main {
             timer.logTime("Time to load classes");
             // 1. PREPASS
             System.out.println("Running prepass phase...");
-            DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses);
+            DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses, mutatedDirectory);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            // printCoverage(coverage);
+            printCoverage(coverage);
             timer.logTime("Time to run prepass");
             // 2. OPTIMIZATION
             DefaultOptimizer optimizer = new DefaultOptimizer(coverage, sortOptimization);
