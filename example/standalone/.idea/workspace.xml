@@ -21,6 +21,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ThreadUtilsTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com.xml" afterPath="$PROJECT_DIR$/com.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/BitField.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/BitField.java" />
@@ -106,8 +107,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ValidateTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ValidateTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/java.policy" afterPath="$PROJECT_DIR$/dir/test/resources/java.policy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" afterPath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tri.xml" afterPath="$PROJECT_DIR$/tri.xml" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -120,11 +120,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="com.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tri.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tri.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -171,8 +191,8 @@
       <find>test_toIntegerObject_Boolean</find>
       <find>depends</find>
       <find>708</find>
-      <find>bin</find>
       <find>new Test</find>
+      <find>bin</find>
     </findStrings>
     <replaceStrings>
       <replace>bin</replace>
@@ -213,7 +233,6 @@
         <option value="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" />
         <option value="$PROJECT_DIR$/tri.sh" />
         <option value="$PROJECT_DIR$/backend.xml" />
-        <option value="$PROJECT_DIR$/tri.xml" />
         <option value="$PROJECT_DIR$/test/prepass/TestFinderTest.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestTask.java" />
         <option value="$PROJECT_DIR$/test/analysis/TestTaskTest.java" />
@@ -234,13 +253,14 @@
         <option value="$PROJECT_DIR$/com.sh" />
         <option value="$PROJECT_DIR$/src/utils/ParentLastURLClassLoader.java" />
         <option value="$PROJECT_DIR$/src/utils/ChildFirstURLClassLoader.java" />
-        <option value="$PROJECT_DIR$/com.xml" />
         <option value="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/prepass/TestMethod.java" />
         <option value="$PROJECT_DIR$/src/prepass/TestFinder.java" />
         <option value="$PROJECT_DIR$/benchmarks.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/com.xml" />
+        <option value="$PROJECT_DIR$/tri.xml" />
       </list>
     </option>
   </component>
@@ -279,25 +299,36 @@
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="analysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="optimization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="prepass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="triangle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -859,7 +890,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513689328034</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Fixed backend to integrate with defects4j">
+      <created>1513690092776</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1513690092776</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1175,14 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tri.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="95" column="41" lean-forward="false" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20640">
@@ -1274,14 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1333,7 +1355,23 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tri.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

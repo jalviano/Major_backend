@@ -61,7 +61,7 @@
                compiler="javac1.7"
                debug="yes">
             <classpath>
-                <pathelement location="bin/main"/>
+                <pathelement location="${mutatedDirectory}"/>
                 <pathelement location="${junit}"/>
                 <pathelement location="${hamcrest}"/>
                 <pathelement location="${easymock}"/>
@@ -76,8 +76,10 @@
                showoutput="true"
                haltonfailure="false">
             <formatter type="plain" usefile="false"/>
-            <classpath path="bin/test"/>
-            <classpath location="bin/main"/>
+            <classpath>
+                <pathelement path="bin/test"/>
+                <pathelement location="${mutatedDirectory}"/>
+            </classpath>
             <batchtest fork="no">
                 <fileset dir="dir/test/java">
                     <include name="**/*Test*.java"/>
@@ -110,7 +112,7 @@
     <target name="mutation.test" description="Run mutation analysis for all unit test cases">
         <exec executable="java">
             <arg value="-cp"/>
-            <arg value="production:${config}:bin/main:${junit}:${hamcrest}:${easymock}"/>
+            <arg value="production:${config}:${mutatedDirectory}:${junit}:${hamcrest}:${easymock}"/>
             <arg value="Main"/>
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>

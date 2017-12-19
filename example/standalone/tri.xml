@@ -13,7 +13,8 @@
     <property name="offset" value="1000"/>
     <property name="factor" value="16"/>
     <property name="logFilePath" value="mutants.log"/>
-    <property name="testDirectory" value="bin/triangle/test/"/>
+    <property name="mutatedDirectory" value="bin/main"/>
+    <property name="testDirectory" value="bin/test/triangle/test/"/>
 
     <!-- Target to clean up -->
     <target name="clean" description="Clean">
@@ -27,7 +28,8 @@
 
     <!-- Target to initialize build -->
     <target name="init">
-        <mkdir dir="bin"/>
+        <mkdir dir="bin/main"/>
+        <mkdir dir="bin/test"/>
         <mkdir dir="production"/>
     </target>
 
@@ -36,7 +38,7 @@
             description="Compile">
         <javac includeantruntime="true"
                srcdir="triangle/src/triangle"
-               destdir="bin"
+               destdir="bin/main"
                debug="yes"
                fork="yes"
                executable="${major}">
@@ -50,9 +52,10 @@
             description="Compile all tests">
         <javac includeantruntime="true"
                srcdir="triangle/test/triangle/test"
-               destdir="bin"
+               destdir="bin/test"
                debug="yes">
             <classpath>
+                <pathelement location="${mutatedDirectory}"/>
                 <pathelement location="${junit}"/>
             </classpath>
             <compilerarg value="-Xlint:none"/>
@@ -65,7 +68,10 @@
                showoutput="true"
                haltonfailure="false">
             <formatter type="plain" usefile="false"/>
-            <classpath path="bin"/>
+            <classpath>
+                <pathelement path="bin/test"/>
+                <pathelement location="${mutatedDirectory}"/>
+            </classpath>
             <batchtest fork="no">
                 <fileset dir="triangle/test">
                     <include name="**/*Test*.java"/>
@@ -93,7 +99,7 @@
     <target name="mutation.test" description="Run mutation analysis for all unit test cases">
         <exec executable="java">
             <arg value="-cp"/>
-            <arg value="production:${config}:${junit}"/>
+            <arg value="production:${config}:${mutatedDirectory}:${junit}"/>
             <arg value="Main"/>
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>
@@ -101,6 +107,7 @@
             <arg value="${offset}"/>
             <arg value="${factor}"/>
             <arg value="${logFilePath}"/>
+            <arg value="${mutatedDirectory}"/>
             <arg value="${testDirectory}"/>
         </exec>
     </target>
