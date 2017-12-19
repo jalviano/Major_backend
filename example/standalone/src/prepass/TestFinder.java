@@ -17,16 +17,14 @@ public class TestFinder {
 
     /**
      * Loads test suite classes in provided directory.
-     * @param testDirectories array of directories in which to search for test classes
+     * @param testDirectory project directory in which to search for test classes
      * @return list of test classes
      */
-    public static List<Class<?>> loadClasses(String[] testDirectories) throws IOException {
+    public static List<Class<?>> loadClasses(String testDirectory) throws IOException {
         List<Class<?>> classes = new ArrayList<>();
-        for (String directory : testDirectories) {
-            File folder = new File(directory);
-            String[] paths = folder.list();
-            getClassPaths(directory, paths, classes);
-        }
+        File folder = new File(testDirectory);
+        String[] paths = folder.list();
+        getClassPaths(testDirectory, paths, classes);
         System.out.println("Test class number: " + classes.size());
         return classes;
     }

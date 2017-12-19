@@ -12,25 +12,6 @@ import java.util.*;
 
 public class Main {
 
-    // Benchmark Report:            Standalone      Fixed           Ant
-
-    // Time to load classes:        17"             22"             ---
-    // Time to run prepass:         4"              ---             37"
-    // Time to run analysis:        21'25"          51'44"          54'06"
-    // Time to format output:       2"              2"              --
-    // Total time:                  21'48"          52'31"          54'44"
-    // Mutant number:               24,607          ------          24,607
-    // Mutants covered:             16,332          ----            16,332
-    // Mutation score:              47.32%          49.33%          49.32% / 74.31%
-
-
-    // Defects4j Benchmarks Report:                 Standalone      Ant
-
-    // defects4j checkout -pLang -v1f -wLang-1:
-    // Time to run analysis:                        62"             88"
-    // Total time:                                  159"            156"
-    // Mutation score:                              68.65%          68.65%
-
     /**
      * Builds backend pipeline to run mutation analysis.
      */
@@ -43,17 +24,16 @@ public class Main {
         int factor = Integer.parseInt(args[4]);
         String logFilepath = args[5];
         String mutatedDirectory = args[6];
-        String[] testDirectories = Arrays.copyOfRange(args, 7, args.length);
+        String testDirectory = args[7];
         List<Class<?>> testClasses;
         try {
             System.out.println("Loading classes...");
-            testClasses = TestFinder.loadClasses(testDirectories);
+            testClasses = TestFinder.loadClasses(testDirectory);
             timer.logTime("Time to load classes");
             // 1. PREPASS
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses, mutatedDirectory);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            printCoverage(coverage);
             timer.logTime("Time to run prepass");
             // 2. OPTIMIZATION
             DefaultOptimizer optimizer = new DefaultOptimizer(coverage, sortOptimization);
@@ -79,16 +59,5 @@ public class Main {
             e.printStackTrace();
         }
         System.exit(0);
-    }
-
-    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
-        System.out.println("Covered mutants: ");
-        for (TestMethod key : coverage.keySet()) {
-            if (key.getName().equals("testConstants")
-                    || key.getName().equals("test_toIntegerObject_Boolean")
-                    || key.getName().equals("test_toIntegerObject_boolean")) {
-                System.out.println(key.getName() + ": " + coverage.get(key).toString());
-            }
-        }
     }
 }
