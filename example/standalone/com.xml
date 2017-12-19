@@ -30,7 +30,7 @@
 
     <!-- Target to initialize build -->
     <target name="init">
-        <mkdir dir="bin/main"/>
+        <mkdir dir="${mutatedDirectory}"/>
         <mkdir dir="bin/test"/>
         <mkdir dir="production"/>
     </target>
@@ -39,7 +39,7 @@
     <target name="compile" description="Compile">
         <javac includeantruntime="true"
                srcdir="dir/main/java/org/apache/commons/lang3"
-               destdir="bin/main"
+               destdir="${mutatedDirectory}"
                debug="yes"
                source="1.7"
                target="1.7"
@@ -137,10 +137,11 @@
                resultFile="results.csv"
                killDetailsFile="killed.csv">
             <classpath>
+                <pathelement location="${mutatedDirectory}"/>
+                <pathelement location="bin/test"/>
                 <pathelement location="${junit}"/>
                 <pathelement location="${hamcrest}"/>
                 <pathelement location="${easymock}"/>
-                <pathelement location="bin"/>
             </classpath>
             <batchtest fork="false">
                 <fileset dir="dir/test/java">
