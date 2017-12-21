@@ -21,24 +21,26 @@ public class TestSorterTest {
     @BeforeClass
     public static void setup() {
         try {
+            String mutated = "bin/main";
             coverage = new HashMap<>();
             sorted = new LinkedHashMap<>();
             Class<?> testClass = new URLClassLoader(new URL[]{
-                    new File("bin/").toURI().toURL()
+                    new File("bin/main/").toURI().toURL(),
+                    new File("bin/test/").toURI().toURL()
             }).loadClass("triangle.test.TriangleTest");
-            TestMethod testMethod1 = new TestMethod(testClass, "test1");
+            TestMethod testMethod1 = new TestMethod(testClass, "test1", mutated);
             testMethod1.setExecTime(3000);
             coverage.put(testMethod1, null);
-            TestMethod testMethod2 = new TestMethod(testClass, "test2");
+            TestMethod testMethod2 = new TestMethod(testClass, "test2", mutated);
             testMethod2.setExecTime(100);
             coverage.put(testMethod2, null);
-            TestMethod testMethod3 = new TestMethod(testClass, "test3");
+            TestMethod testMethod3 = new TestMethod(testClass, "test3", mutated);
             testMethod3.setExecTime(400);
             coverage.put(testMethod3, null);
-            TestMethod testMethod4 = new TestMethod(testClass, "test4");
+            TestMethod testMethod4 = new TestMethod(testClass, "test4", mutated);
             testMethod4.setExecTime(0);
             coverage.put(testMethod4, null);
-            TestMethod testMethod5 = new TestMethod(testClass, "test5");
+            TestMethod testMethod5 = new TestMethod(testClass, "test5", mutated);
             testMethod5.setExecTime(60000);
             coverage.put(testMethod5, null);
             sorted.put(testMethod4, null);

@@ -18,9 +18,10 @@ public class TestRunnerTest {
     public static void setup() {
         try {
             Class<?> testClass = new URLClassLoader(new URL[]{
-                    new File("bin/").toURI().toURL()
+                    new File("bin/main/").toURI().toURL(),
+                    new File("bin/test/").toURI().toURL()
             }).loadClass("triangle.test.TriangleTest");
-            testMethod = new TestMethod(testClass, "test1");
+            testMethod = new TestMethod(testClass, "test1", "bin/main");
         } catch (Exception e) {
             e.printStackTrace();
         }

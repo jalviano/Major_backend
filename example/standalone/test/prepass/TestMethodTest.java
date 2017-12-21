@@ -17,9 +17,10 @@ public class TestMethodTest {
     public static void setup() {
         try {
             testClass = new URLClassLoader(new URL[]{
-                    new File("bin/").toURI().toURL()
+                    new File("bin/main/").toURI().toURL(),
+                    new File("bin/test/").toURI().toURL()
             }).loadClass("triangle.test.TriangleTest");
-            testMethod = new TestMethod(testClass, "test1");
+            testMethod = new TestMethod(testClass, "test1", "bin/main");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,13 +33,13 @@ public class TestMethodTest {
 
     @Test(expected=Exception.class)
     public void reloadClassTest2() {
-        TestMethod test = new TestMethod(null, "test");
+        TestMethod test = new TestMethod(null, "test", null);
         test.reloadClass();
     }
 
     @Test
     public void getTestClassTest() {
-        Assert.assertEquals(testClass, testMethod.getTestClass());
+        Assert.assertEquals(testClass.getName(), testMethod.getTestClass().getName());
     }
 
     @Test
@@ -61,9 +62,10 @@ public class TestMethodTest {
     public void equalsTest1() {
         try {
             testClass = new URLClassLoader(new URL[]{
-                    new File("bin/").toURI().toURL()
+                    new File("bin/main/").toURI().toURL(),
+                    new File("bin/test/").toURI().toURL()
             }).loadClass("triangle.test.TriangleTest");
-            TestMethod test = new TestMethod(testClass, "test1");
+            TestMethod test = new TestMethod(testClass, "test1", "bin/main");
             Assert.assertTrue(testMethod.equals(test));
         } catch (Exception e) {
             e.printStackTrace();

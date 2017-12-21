@@ -22,9 +22,7 @@ public class TestFinder {
      */
     public static List<Class<?>> loadClasses(String testDirectory) throws IOException {
         List<Class<?>> classes = new ArrayList<>();
-        File folder = new File(testDirectory);
-        String[] paths = folder.list();
-        getClassPaths(testDirectory, paths, classes);
+        getClassPaths(testDirectory, classes);
         System.out.println("Test class number: " + classes.size());
         return classes;
     }
@@ -54,41 +52,36 @@ public class TestFinder {
     /**
      * Finds full file paths for all test classes in provided root directory. Recursively searches through all sub
      * folders in directory to find all classes in the test suite.
-     * @param directory current directory file path
-     * @param paths all possible sub folders in current directory
+     * @param directoryName current directory file path
      * @param classes cumulative list of classes found in root directory and its sub folders
      */
-    private static void getClassPaths(String directory, String[] paths, List<Class<?>> classes) throws IOException {
-        boolean hasSubdirectory = true;
-        while (hasSubdirectory) {
-            boolean noSubDirectory = true;
-            for (String path : paths) {
-                String filepath = directory + path;
-                File subfolder = new File(filepath);
-                if (subfolder.isDirectory()) {
-                    noSubDirectory = false;
-                    getClassPaths(filepath + "/", subfolder.list(), classes);
-                } else if (path.contains("Test.class")) {
-                    String classname = getClassName(filepath);
-                    String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
-                    try {
-                        Class<?> cls = new URLClassLoader(new URL[] {
-                                new File(packageBase).toURI().toURL()
-                        }).loadClass(classname);
-                        classes.add(cls);
-                    } catch (ClassNotFoundException e) {
-                        System.out.println("ClassNotFoundException: " + filepath);
-                    } catch (NullPointerException e) {
-                        System.out.println("NullPointerException: " + filepath);
-                    } catch (Exception e) {
-                        System.out.println("Exception: " + filepath);
+    private static void getClassPaths(String directoryName, List<Class<?>> classes) {
+        File directory = new File(directoryName);
+        File[] fList = directory.listFiles();
+        if (fList != null) {
+            for (File file : fList) {
+                if (file.isFile()) {
+                    String filepath = file.getPath();
+                    if (filepath.contains("Test.class") || filepath.contains("Tests.class")) {
+                        try {
+                            String classname = getClassName(filepath);
+                            String packageBase = filepath.substring(0, filepath.length() - (classname + ".class").length());
+                            Class<?> cls = new URLClassLoader(new URL[]{
+                                    new File(packageBase).toURI().toURL()
+                            }).loadClass(classname);
+                            classes.add(cls);
+                        } catch (ClassNotFoundException e) {
+                            System.out.println("ClassNotFoundException: " + filepath);
+                        } catch (NullPointerException e) {
+                            System.out.println("NullPointerException: " + filepath);
+                        } catch (Exception e) {
+                            System.out.println("Exception: " + filepath);
+                        }
                     }
-                    noSubDirectory = true;
-                } else {
-                    noSubDirectory = true;
+                } else if (file.isDirectory()) {
+                    getClassPaths(file.getAbsolutePath(), classes);
                 }
             }
-            hasSubdirectory = !noSubDirectory;
         }
     }
 
@@ -111,6 +104,15 @@ public class TestFinder {
                         break;
                     } else {
                         classname = line.split(" ")[2];
+                        break;
+                    }
+                } else if (line.startsWith("public final class")) {
+                    if (line.contains("<")) {
+                        String pre = line.split(" ")[3];
+                        classname = pre.split("<")[0];
+                        break;
+                    } else {
+                        classname = line.split(" ")[3];
                         break;
                     }
                 }
