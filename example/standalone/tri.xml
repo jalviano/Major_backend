@@ -19,7 +19,7 @@
     <!-- Target to clean up -->
     <target name="clean" description="Clean">
         <delete dir="bin"/>
-        <delete dir="production"/>
+        <delete dir="target"/>
         <delete>
             <fileset dir="." includes="*.csv"/>
             <fileset dir="." includes="*.log"/>
@@ -30,7 +30,7 @@
     <target name="init">
         <mkdir dir="${mutatedDirectory}"/>
         <mkdir dir="bin/test"/>
-        <mkdir dir="production"/>
+        <mkdir dir="target/main"/>
     </target>
 
     <!-- Target to compile the project -->
@@ -84,7 +84,7 @@
     <target name="compile.analysis" description="Compile mutation analysis backend">
         <javac includeantruntime="true"
                srcdir="src"
-               destdir="production"
+               destdir="target/main"
                debug="yes"
                executable="${major}">
             <compilerarg value="-Xlint:none"/>
@@ -99,7 +99,7 @@
     <target name="mutation.test" description="Run mutation analysis for all unit test cases">
         <exec executable="java">
             <arg value="-cp"/>
-            <arg value="production:${config}:${mutatedDirectory}:${junit}"/>
+            <arg value="target/main:${config}:${mutatedDirectory}:${junit}"/>
             <arg value="Main"/>
             <arg value="${outputFullKillMatrix}"/>
             <arg value="${sortOptimization}"/>

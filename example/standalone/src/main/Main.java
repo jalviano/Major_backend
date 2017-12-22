@@ -12,6 +12,12 @@ import java.util.*;
 
 public class Main {
 
+    // Issue: Configure test class finding/loading
+    // Issue: Chart tests
+    // Extension: Class/method-level kill matrix
+    // Extension: Choose tests to run
+    // Extension: Load tests once and store data
+
     /**
      * Builds backend pipeline to run mutation analysis.
      */
@@ -34,7 +40,6 @@ public class Main {
             System.out.println("Running prepass phase...");
             DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses, mutatedDirectory, testIsolation);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
-            //printCoverage(coverage);
             timer.logTime("Time to run prepass");
             // 2. OPTIMIZATION
             DefaultOptimizer optimizer = new DefaultOptimizer(coverage, sortOptimization);
@@ -60,14 +65,5 @@ public class Main {
             e.printStackTrace();
         }
         System.exit(0);
-    }
-
-    private static void printCoverage(HashMap<TestMethod, ArrayList<Integer>> coverage) {
-        System.out.println("Covered mutants: ");
-        for (TestMethod key : coverage.keySet()) {
-            if (key.getName().equals("testSerialization")) {
-                System.out.println(key.getLongName() + ": " + coverage.get(key).toString());
-            }
-        }
     }
 }

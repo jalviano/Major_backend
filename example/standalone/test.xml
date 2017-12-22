@@ -22,7 +22,7 @@
         </delete>
         <delete dir="${dir.cov}"/>
         <delete dir="bin"/>
-        <delete dir="production"/>
+        <delete dir="target"/>
         <delete dir=".instrumented"/>
     </target>
 
@@ -30,8 +30,8 @@
     <target name="init">
         <mkdir dir="bin/main"/>
         <mkdir dir="bin/test"/>
-        <mkdir dir="production/main"/>
-        <mkdir dir="production/test"/>
+        <mkdir dir="target/main"/>
+        <mkdir dir="target/test"/>
         <mkdir dir=".instrumented"/>
     </target>
 
@@ -73,7 +73,7 @@
     <target name="backend.compile" description="Compile mutation analysis backend">
         <javac includeantruntime="true"
                srcdir="src"
-               destdir="production/main"
+               destdir="target/main"
                source="1.7"
                target="1.7"
                compiler="javac1.7"
@@ -93,14 +93,14 @@
             depends="backend.compile">
         <javac includeantruntime="true"
                srcdir="test"
-               destdir="production/test"
+               destdir="target/test"
                source="1.7"
                target="1.7"
                compiler="javac1.7"
                nowarn="true"
                debug="yes">
             <classpath>
-                <pathelement path="production/main"/>
+                <pathelement path="target/main"/>
                 <pathelement location="${junit}"/>
             </classpath>
             <compilerarg value="-Xlint:none"/>
@@ -118,8 +118,8 @@
             <formatter type="plain" usefile="false"/>
             <classpath>
                 <pathelement path=".instrumented"/>
-                <pathelement path="production/main"/>
-                <pathelement path="production/test"/>
+                <pathelement path="target/main"/>
+                <pathelement path="target/test"/>
                 <pathelement location="${config}"/>
                 <pathelement location="${junit}"/>
                 <pathelement location="${cobertura}"/>
@@ -136,7 +136,7 @@
     <target name="coverage" description="Run coverage analysis">
         <antcall target="backend.compile"/>
         <cobertura-instrument failOnError="true" toDir=".instrumented">
-            <fileset dir="production/main">
+            <fileset dir="target/main">
                 <include name="**/*.class"/>
             </fileset>
         </cobertura-instrument>

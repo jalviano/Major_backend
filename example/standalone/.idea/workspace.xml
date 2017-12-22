@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Fixed test isolation configuration">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/utils/CoverageLogger.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArchUtils.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ClassPathUtils.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/NotImplementedException.java" afterPath="" />
@@ -20,7 +21,37 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ThreadUtilsTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/analysis/TestRunnerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/analysis/TestTaskTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/optimization/DefaultOptimizerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/optimization/TestSorterTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/output/DefaultKillMatrixTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/prepass/TestFinderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/prepass/TestMethodTest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/main/analysis/DefaultMutationAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/MutationAnalyzer.java" afterPath="$PROJECT_DIR$/src/main/analysis/MutationAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/TestRunner.java" afterPath="$PROJECT_DIR$/src/main/analysis/TestRunner.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/analysis/TestTask.java" afterPath="$PROJECT_DIR$/src/main/analysis/TestTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/optimization/DefaultOptimizer.java" afterPath="$PROJECT_DIR$/src/main/optimization/DefaultOptimizer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/optimization/TestSorter.java" afterPath="$PROJECT_DIR$/src/main/optimization/TestSorter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/CSVFormatter.java" afterPath="$PROJECT_DIR$/src/main/output/CSVFormatter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/CSVKilledFormatter.java" afterPath="$PROJECT_DIR$/src/main/output/CSVKilledFormatter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/DefaultKillMatrix.java" afterPath="$PROJECT_DIR$/src/main/output/DefaultKillMatrix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/Formatter.java" afterPath="$PROJECT_DIR$/src/main/output/Formatter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/KillMatrix.java" afterPath="$PROJECT_DIR$/src/main/output/KillMatrix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/output/KillMatrixBuilder.java" afterPath="$PROJECT_DIR$/src/main/output/KillMatrixBuilder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/main/prepass/DefaultPrepassAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/prepass/PrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/main/prepass/PrepassAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/main/prepass/TestFinder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/prepass/TestMethod.java" afterPath="$PROJECT_DIR$/src/main/prepass/TestMethod.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils/CSVUtils.java" afterPath="$PROJECT_DIR$/src/main/utils/CSVUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils/ChildFirstURLClassLoader.java" afterPath="$PROJECT_DIR$/src/main/utils/ChildFirstURLClassLoader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils/Outcome.java" afterPath="$PROJECT_DIR$/src/main/utils/Outcome.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils/PipelineTimer.java" afterPath="$PROJECT_DIR$/src/main/utils/PipelineTimer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/standalone.iml" afterPath="$PROJECT_DIR$/.idea/standalone.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com.xml" afterPath="$PROJECT_DIR$/com.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/BitField.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/BitField.java" />
@@ -106,8 +137,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ValidateTest.java" afterPath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ValidateTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/java.policy" afterPath="$PROJECT_DIR$/dir/test/resources/java.policy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" afterPath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.xml" afterPath="$PROJECT_DIR$/test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tri.xml" afterPath="$PROJECT_DIR$/tri.xml" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -120,11 +151,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="benchmarks.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/benchmarks.txt">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="106" column="51" lean-forward="true" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+            <state relative-caret-position="232">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="com.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tri.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tri.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoverageLogger.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/utils/CoverageLogger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultMutationAnalyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/analysis/DefaultMutationAnalyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -143,7 +214,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>testLang70</find>
       <find>20111</find>
       <find>integer</find>
       <find>static Integer</find>
@@ -173,6 +243,7 @@
       <find>bin</find>
       <find>bin/main</find>
       <find>instru</find>
+      <find>production</find>
     </findStrings>
     <replaceStrings>
       <replace>bin</replace>
@@ -190,10 +261,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharRangeTest.java" />
-        <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/CharSetTest.java" />
-        <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ObjectUtilsTest.java" />
-        <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/RangeTest.java" />
         <option value="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/SerializationUtilsTest.java" />
         <option value="$PROJECT_DIR$/triangle/test/triangle/test/TriangleTest.java" />
         <option value="$PROJECT_DIR$/src/analysis/TestRunner.java" />
@@ -222,9 +289,7 @@
         <option value="$PROJECT_DIR$/com.sh" />
         <option value="$PROJECT_DIR$/src/utils/ParentLastURLClassLoader.java" />
         <option value="$PROJECT_DIR$/src/utils/ChildFirstURLClassLoader.java" />
-        <option value="$PROJECT_DIR$/src/prepass/TestMethod.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/tri.xml" />
         <option value="$PROJECT_DIR$/test/analysis/TestRunnerTest.java" />
         <option value="$PROJECT_DIR$/test/analysis/TestTaskTest.java" />
         <option value="$PROJECT_DIR$/test/optimization/TestSorterTest.java" />
@@ -235,12 +300,18 @@
         <option value="$PROJECT_DIR$/tri.sh" />
         <option value="$PROJECT_DIR$/test/prepass/DefaultPrepassAnalyzerTest.java" />
         <option value="$PROJECT_DIR$/test/MainTest.java" />
-        <option value="$PROJECT_DIR$/com.xml" />
         <option value="$PROJECT_DIR$/test.xml" />
         <option value="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/prepass/TestFinder.java" />
         <option value="$PROJECT_DIR$/benchmarks.txt" />
+        <option value="$PROJECT_DIR$/src/prepass/TestMethod.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/com.xml" />
+        <option value="$PROJECT_DIR$/tri.xml" />
+        <option value="$PROJECT_DIR$/src/main/utils/CoverageLogger.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/utils/ChildFirstURLClassLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/prepass/DefaultPrepassAnalyzer.java" />
       </list>
     </option>
   </component>
@@ -284,13 +355,34 @@
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="analysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="standalone" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="prepass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="standalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,6 +405,13 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="TEXT&#10;JAVA" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/test/optimization" />
+      <recent name="$PROJECT_DIR$/test/analysis" />
+      <recent name="$PROJECT_DIR$/src/analysis" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="prepass" />
       <recent name="output" />
@@ -320,12 +419,6 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test/optimization" />
-      <recent name="$PROJECT_DIR$/test/analysis" />
-      <recent name="$PROJECT_DIR$/src/analysis" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -888,7 +981,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513917548484</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fixed test isolation configuration">
+      <created>1513951612686</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1513951612686</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1001,21 +1101,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/AnnotationUtils.class" />
-    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/math/NumberUtils.class" />
-    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/CharSet.class" />
-    <entry file="file://$PROJECT_DIR$/bin/org/apache/commons/lang3/ArrayUtils.class" />
-    <entry file="file://$PROJECT_DIR$/src/utils/PipelineTimer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/utils/PipelineTimer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/MutationAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1042,28 +1131,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/junit4302037480238282470.properties" />
     <entry file="file://$PROJECT_DIR$/junitvmwatcher9064326656374457117.properties" />
-    <entry file="file://$PROJECT_DIR$/src/optimization/TestSorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/optimization/DefaultOptimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/CSVFormatter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/output/CSVFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="38" column="67" lean-forward="true" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/DefaultKillMatrix.java">
+    <entry file="file://$PROJECT_DIR$/src/main/output/DefaultKillMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="124" column="69" lean-forward="false" selection-start-line="124" selection-start-column="69" selection-end-line="124" selection-end-column="69" />
@@ -1101,26 +1176,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/ParentLastURLClassLoader.java" />
-    <entry file="file://$PROJECT_DIR$/src/utils/ChildFirstURLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmarks.log" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tri.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,14 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1423">
-          <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1224,7 +1276,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/prepass/TestFinder.class">
+    <entry file="file://$PROJECT_DIR$/target/prepass/TestFinder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1774">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1239,7 +1291,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/TestRunner.java">
+    <entry file="file://$PROJECT_DIR$/benchmarks.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/prepass/TestFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/prepass/TestMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/analysis/MutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/analysis/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="17" column="77" lean-forward="false" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
@@ -1247,58 +1331,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/analysis/TestTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+        <state relative-caret-position="255">
+          <caret line="27" column="72" lean-forward="true" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/optimization/DefaultOptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        <state relative-caret-position="255">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/TestMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/optimization/TestSorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
+    <entry file="file://$PROJECT_DIR$/src/test/analysis/TestRunnerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/Main.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-472">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#3108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/tri.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="127">
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/CSVUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/ChildFirstURLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/analysis/DefaultMutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
           <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/prepass/DefaultPrepassAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        <state relative-caret-position="440">
+          <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/utils/CoverageLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="106" column="51" lean-forward="true" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+        <state relative-caret-position="165">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
