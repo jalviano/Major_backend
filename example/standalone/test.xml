@@ -126,11 +126,7 @@
             </classpath>
             <batchtest fork="true">
                 <fileset dir="test">
-                    <!--<include name="**/MainTest.java"/>-->
                     <include name="**/*Test*.java"/>
-                    <exclude name="**/MainTest.java"/>
-                    <exclude name="**/DefaultPrepassAnalyzerTest.java"/>
-                    <exclude name="**/DefaultMutationAnalyzerTest.java"/>
                 </fileset>
             </batchtest>
         </junit>

@@ -10,14 +10,16 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
 
     private List<Class<?>> testClasses;
     private String mutatedDirectory;
+    private boolean testIsolation;
 
     /**
      * Default prepass analyzer constructor to run prepass phase of mutation analysis.
      * @param testClasses suite of test classes to be used for analysis
      */
-    public DefaultPrepassAnalyzer(List<Class<?>> testClasses, String mutatedDirectory) {
+    public DefaultPrepassAnalyzer(List<Class<?>> testClasses, String mutatedDirectory, boolean testIsolation) {
         this.testClasses = testClasses;
         this.mutatedDirectory = mutatedDirectory;
+        this.testIsolation = testIsolation;
     }
 
     /**
@@ -33,7 +35,12 @@ public class DefaultPrepassAnalyzer implements PrepassAnalyzer {
             for (TestMethod testMethod : testMethods) {
                 Config.__M_NO = 0;
                 long start = System.currentTimeMillis();
-                Request request = Request.method(testMethod.reloadClass(), testMethod.getName());
+                Request request;
+                if (testIsolation) {
+                    request = Request.method(testMethod.reloadClass(), testMethod.getName());
+                } else {
+                    request = Request.method(testMethod.getTestClass(), testMethod.getName());
+                }
                 new JUnitCore().run(request);
                 long end = System.currentTimeMillis();
                 testMethod.setExecTime(end - start);

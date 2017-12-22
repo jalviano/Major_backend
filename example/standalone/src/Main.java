@@ -32,7 +32,7 @@ public class Main {
             timer.logTime("Time to load classes");
             // 1. PREPASS
             System.out.println("Running prepass phase...");
-            DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses, mutatedDirectory);
+            DefaultPrepassAnalyzer prepass = new DefaultPrepassAnalyzer(testClasses, mutatedDirectory, testIsolation);
             HashMap<TestMethod, ArrayList<Integer>> coverage = prepass.runPrepass();
             timer.logTime("Time to run prepass");
             // 2. OPTIMIZATION
