@@ -57,9 +57,9 @@ public class TestFinder {
      */
     private static void getClassPaths(String directoryName, List<Class<?>> classes) {
         File directory = new File(directoryName);
-        File[] fList = directory.listFiles();
-        if (fList != null) {
-            for (File file : fList) {
+        File[] files = directory.listFiles();
+        if (files != null) {
+            for (File file : files) {
                 if (file.isFile()) {
                     String filepath = file.getPath();
                     if (filepath.contains("Test.class") || filepath.contains("Tests.class")) {

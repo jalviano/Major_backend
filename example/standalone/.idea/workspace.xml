@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Updated ant build files">
+    <list default="true" id="2ffc8242-d761-4460-9d4d-5fb2f65c2d74" name="Default" comment="Fixed test isolation configuration">
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArchUtils.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ClassPathUtils.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/NotImplementedException.java" afterPath="" />
@@ -20,9 +20,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dir/test/java/org/apache/commons/lang3/ThreadUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/MainTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/analysis/DefaultMutationAnalyzerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/prepass/DefaultPrepassAnalyzerTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/AnnotationUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" afterPath="$PROJECT_DIR$/dir/main/java/org/apache/commons/lang3/ArrayUtils.java" />
@@ -110,8 +107,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/java.policy" afterPath="$PROJECT_DIR$/dir/test/resources/java.policy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" afterPath="$PROJECT_DIR$/dir/test/resources/lang-708-input.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" afterPath="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.xml" afterPath="$PROJECT_DIR$/test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prepass/TestFinder.java" afterPath="$PROJECT_DIR$/src/prepass/TestFinder.java" />
     </list>
     <ignored mask="*.class" />
     <ignored mask=".DS_STORE" />
@@ -124,21 +120,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="benchmarks.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="benchmarks.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/benchmarks.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="50" column="50" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+            <state relative-caret-position="567">
+              <caret line="106" column="51" lean-forward="true" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -250,10 +236,10 @@
         <option value="$PROJECT_DIR$/test/prepass/DefaultPrepassAnalyzerTest.java" />
         <option value="$PROJECT_DIR$/test/MainTest.java" />
         <option value="$PROJECT_DIR$/com.xml" />
-        <option value="$PROJECT_DIR$/src/prepass/TestFinder.java" />
         <option value="$PROJECT_DIR$/test.xml" />
-        <option value="$PROJECT_DIR$/benchmarks.txt" />
         <option value="$PROJECT_DIR$/src/prepass/DefaultPrepassAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/prepass/TestFinder.java" />
+        <option value="$PROJECT_DIR$/benchmarks.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -895,7 +881,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513889577534</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fixed test isolation configuration">
+      <created>1513917548484</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1513917548484</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -994,7 +987,8 @@
     <MESSAGE value="Added coverage analysis to test suite" />
     <MESSAGE value="Fixed backend to integrate with defects4j" />
     <MESSAGE value="Updated ant build files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ant build files" />
+    <MESSAGE value="Fixed test isolation configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed test isolation configuration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1237,14 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1261,37 +1247,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prepass/TestMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="e#2186#2187#0" expanded="true" />
-            <element signature="e#2226#2227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analysis/TestTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1304,10 +1263,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/prepass/TestMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prepass/TestFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/DefaultMutationAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="50" column="50" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+        <state relative-caret-position="208">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="106" column="51" lean-forward="true" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
           <folding />
         </state>
       </provider>
